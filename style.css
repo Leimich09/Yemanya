@@ -1,0 +1,533 @@
+:root {
+    --primary-green: #2a8c5a;
+    --secondary-orange: #f39c12;
+    --water-blue: #3498db;
+    --dark-blue: #1a5276;
+    --light-bg: #f8f9fa;
+    --text-dark: #333;
+    --text-light: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navegación */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-green) !important;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.navbar-brand:hover .logo {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--dark-blue) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-orange);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--water-blue) !important;
+}
+
+.donate-btn {
+    background-color: var(--secondary-orange);
+    color: white !important;
+    border-radius: 50px;
+    padding: 8px 20px !important;
+    transition: all 0.3s;
+}
+
+.donate-btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* Hero Section con Carrusel */
+.hero-carousel {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100vh;
+    position: relative;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.carousel-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.carousel-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* Sección de Estadísticas */
+.stats-section {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 60px 0;
+}
+
+.stat-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--secondary-orange);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* Sección General */
+.section {
+    padding: 80px 0;
+}
+
+.section-alt {
+    background-color: var(--light-bg);
+}
+
+.section-title {
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-orange);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Tarjetas de Servicio */
+.service-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    height: 100%;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    background-color: var(--water-blue);
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--secondary-orange);
+    transform: scale(1.1);
+}
+
+.service-card .card-body {
+    padding: 30px;
+}
+
+.service-card h4 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+/* Tarjetas de Proyecto */
+.project-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    margin-bottom: 30px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card .card-body {
+    padding: 20px;
+}
+
+.project-card h4 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.project-card .project-location {
+    color: var(--secondary-orange);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Tarjetas de Equipo */
+.team-card {
+    text-align: center;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-card .card-body {
+    padding: 20px;
+}
+
+.team-card h4 {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.team-card .team-role {
+    color: var(--secondary-orange);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+.team-card .team-email {
+    color: var(--water-blue);
+    font-size: 0.9rem;
+}
+
+.team-card .social-links {
+    margin-top: 15px;
+}
+
+.team-card .social-links a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--light-bg);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 5px;
+    color: var(--dark-blue);
+    transition: all 0.3s;
+}
+
+.team-card .social-links a:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+/* Sección de Testimonios */
+.testimonial-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/ocean-conservation/1600/800.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+}
+
+.testimonial-card {
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--secondary-orange);
+}
+
+/* Sección de Newsletter */
+.newsletter-section {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 60px 0;
+}
+
+.newsletter-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    border-radius: 50px;
+    padding: 12px 20px;
+    border: none;
+}
+
+.newsletter-form button {
+    border-radius: 50px;
+    padding: 12px 30px;
+    background-color: var(--secondary-orange);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: #0d1f2d;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer h5 {
+    color: var(--secondary-orange);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer a {
+    color: #b0c4de;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer a:hover {
+    color: var(--secondary-orange);
+    padding-left: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin: 0 5px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-orange);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    color: #b0c4de;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--primary-green);
+    border: none;
+    padding: 12px 25px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1e6e48;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+/* Animaciones */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}

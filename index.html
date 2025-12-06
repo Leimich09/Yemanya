@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemanyá - Agua y Conservación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://z-cdn-media.chatglm.cn/files/d0ddc8f2-fa3b-45cb-8aa9-c89ce6785328_pasted_image_1763097326921.png?auth_key=1863097347-787375e0be82463daaf54efa03df473e-0-a285658282e6c7aabd0223998301f5b1" alt="Yemanyá Logo" class="logo">
+                Yemanyá
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link donate-btn" href="#donate">Donar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Carrusel -->
+    <section id="hero" class="hero-carousel">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/seed/mangrove-conservation/1920/1080.jpg" alt="Conservación de Manglares">
+                    <div class="carousel-overlay">
+                        <div class="carousel-content">
+                            <h1>Protegiendo Nuestros Ecosistemas Acuáticos</h1>
+                            <p>Trabajamos por la conservación de manglares, ríos y océanos para garantizar un futuro sostenible para las comunidades costeras de Ecuador.</p>
+                            <a href="#about" class="btn btn-primary btn-lg">Conoce Nuestro Trabajo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/marine-turtles/1920/1080.jpg" alt="Conservación de Tortugas Marinas">
+                    <div class="carousel-overlay">
+                        <div class="carousel-content">
+                            <h1>Salvando a las Tortugas Marinas</h1>
+                            <p>Monitoreamos nidificaciones, educamos a las comunidades y fortalecemos el manejo comunitario para proteger a estas especies en peligro.</p>
+                            <a href="#projects" class="btn btn-primary btn-lg">Ver Proyectos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/seed/water-conservation/1920/1080.jpg" alt="Conservación del Agua">
+                    <div class="carousel-overlay">
+                        <div class="carousel-content">
+                            <h1>Agua para Todos</h1>
+                            <p>Implementamos soluciones basadas en la naturaleza para garantizar el acceso sostenible al agua dulce y proteger nuestros recursos hídricos.</p>
+                            <a href="#services" class="btn btn-primary btn-lg">Nuestros Servicios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Sección de Estadísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="30">0</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Proyectos Activos</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Comunidades Impactadas</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1000">0</div>
+                        <div class="stat-label">Hectáreas Protegidas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="fade-in">
+                        <h2 class="section-title text-start">¿Quiénes somos?</h2>
+                        <p>Yemanyá – Agua y Conservación es una organización ecuatoriana sin fines de lucro fundada en 2024 en Esmeraldas. Estamos registrados ante el Ministerio del Ambiente, Agua y Transición Ecológica de Ecuador.</p>
+                        <p>Aunque somos una organización joven, contamos con un equipo con más de 30 años de experiencia en investigación, conservación, educación ambiental y trabajo con comunidades.</p>
+                        <p>Nuestro nombre honra a Yemanyá, deidad u orisha del océano, los peces y los navegantes en la cultura yoruba, hace referencia a nuestra formación y profundo vínculo con los ecosistemas acuáticos, asi como el respeto y conexión con las culturas y tradiciones afroesmeraldeñas.</p>
+                        <p>Nuestro logotipo —un mangle— simboliza la unión del agua, la tierra y el aire: los elementos que sostienen la vida en la Tierra.</p>
+                        <div class="mt-4">
+                            <a href="#services" class="btn btn-primary me-3">Nuestros Servicios</a>
+                            <a href="#team" class="btn btn-outline-primary">Conoce al Equipo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="fade-in">
+                        <img src="https://picsum.photos/seed/mangrove-ecosystem/600/400.jpg" alt="Mangrove Ecosystem" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section id="mission" class="section section-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Nuestra Misión y Visión</h2>
+                    <p class="section-subtitle">Trabajamos por un futuro donde los ecosistemas acuáticos y las comunidades costeras prosperen en armonía</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow fade-in">
+                        <div class="card-body p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="card-title">Nuestra Visión</h3>
+                            <p class="card-text">Promover el uso sostenible y la conservación del patrimonio natural asociado a los ecosistemas marino - costeros y de aguas dulces continentales para el desarrollo de las comunidades costeras de Ecuador.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow fade-in">
+                        <div class="card-body p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="card-title">Nuestra Misión</h3>
+                            <p class="card-text">Fomentar el desarrollo sostenible y la conservación de ecosistemas marino- costeros y de aguas dulces continentales mediante investigación, educación ambiental, desarrollo local y alianzas estratégicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Nuestros Proyectos</h2>
+                    <p class="section-subtitle">Conoce algunas de nuestras iniciativas de conservación en acción</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/mangrove-restoration/400/250.jpg" alt="Restauración de Manglares">
+                        <div class="card-body">
+                            <h4>Restauración de Manglares</h4>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Esmeraldas, Ecuador</div>
+                            <p>Proyecto de reforestación de 200 hectáreas de manglar en la costa de Esmeraldas, involucrando a comunidades locales en la siembra y monitoreo.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/marine-turtle-protection/400/250.jpg" alt="Protección de Tortugas Marinas">
+                        <div class="card-body">
+                            <h4>Protección de Tortugas Marinas</h4>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Playas de Esmeraldas</div>
+                            <p>Monitoreo de nidificación y protección de nidos de tortugas marinas en las playas más importantes de la región.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/water-quality-monitoring/400/250.jpg" alt="Monitoreo de Calidad del Agua">
+                        <div class="card-body">
+                            <h4>Monitoreo de Calidad del Agua</h4>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Cuenca del Río Esmeraldas</div>
+                            <p>Implementación de un sistema comunitario de monitoreo de la calidad del agua en la cuenca del río Esmeraldas.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/sustainable-fisheries/400/250.jpg" alt="Pesquerías Sostenibles">
+                        <div class="card-body">
+                            <h4>Pesquerías Sostenibles</h4>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Comunidades Costeras</div>
+                            <p>Desarrollo de prácticas de pesca sostenible con comunidades locales para garantizar la conservación de especies marinas.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/environmental-education/400/250.jpg" alt="Educación Ambiental">
+                        <div class="card-body">
+                            <h4>Educación Ambiental</h4>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Escuelas de Esmeraldas</div>
+                            <p>Programa educativo en escuelas locales sobre la importancia de la conservación de ecosistemas acuáticos.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/climate-adaptation/400/250.jpg" alt="Adaptación al Cambio Climático">
+                        <div class="card-body">
+                            <h4>Adaptación al Cambio Climático</h4>
+                            <div class="project-location"><i class="fas fa-map-marker-alt"></i> Zonas Vulnerables</div>
+                            <p>Desarrollo de estrategias de adaptación al cambio climático para comunidades costeras vulnerables.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">Ver Todos los Proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <p class="section-subtitle">Ofrecemos soluciones integrales para la conservación y gestión sostenible de ecosistemas acuáticos</p>
+                </div>
+            </div>
+            
+            <!-- Marine-Coastal Ecosystems -->
+            <div class="row mb-5">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="text-center mb-4"><i class="fas fa-water me-2 text-primary"></i>Ecosistemas Marino-Costeros</h3>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <h4>Gestión de Recursos Biológicos</h4>
+                            <p>Monitoreo de pesquerías artesanales, análisis de estadísticas de pesca y marisqueo, estudio de artes de pesca.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h4>Acuicultura Sostenible</h4>
+                            <p>Evaluación de impactos ecológicos y diseño de sistemas de acuicultura respetuosos con el medio marino.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-protect"></i>
+                            </div>
+                            <h4>Conservación de Tortugas Marinas</h4>
+                            <p>Monitoreo de nidificación, educación ambiental y fortalecimiento del manejo comunitario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Continental Aquatic Ecosystems -->
+            <div class="row mb-5">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="text-center mb-4"><i class="fas fa-fish me-2 text-primary"></i>Ecosistemas Acuáticos Continentales</h3>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Ecología Acuática</h4>
+                            <p>Evaluación del estado ecológico de ríos, lagunas y represas, análisis de biodiversidad y conectividad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4>Bioindicadores Acuáticos</h4>
+                            <p>Uso de macroinvertebrados, diatomeas y plancton para evaluar la calidad ambiental.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h4>Vegetación Ribereña</h4>
+                            <p>Evaluación de biodiversidad y calidad ecológica; diseño y ejecución de planes de restauración.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Environmental Education -->
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="text-center mb-4"><i class="fas fa-graduation-cap me-2 text-primary"></i>Educación y Cambio Climático</h3>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h4>Educación Ambiental</h4>
+                            <p>Programas adaptados para niños, jóvenes y adultos; con aprendizaje activo y arte como herramienta pedagógica.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Ciencia Ciudadana</h4>
+                            <p>Diseño e implementación de programas de monitoreo ambiental comunitario.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card card fade-in">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h4>Cambio Climático</h4>
+                            <p>Análisis climático, modelos matemáticos y estudios sobre vulnerabilidad y adaptación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title text-white">Testimonios</h2>
+                    <p class="section-subtitle text-white-50">Lo que dicen nuestras comunidades socias</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-text">
+                            "Gracias a Yemanyá, hemos aprendido a proteger nuestras playas y a convivir de manera sostenible con las tortugas marinas que llegan cada año a desovar."
+                        </div>
+                        <div class="testimonial-author">- María López, Pescadora artesanal</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-text">
+                            "El programa de educación ambiental ha transformado la conciencia ecológica de nuestros estudiantes. Ahora son verdaderos guardianes del medio ambiente."
+                        </div>
+                        <div class="testimonial-author">- Carlos Mendoza, Director de escuela</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-text">
+                            "Con el apoyo de Yemanyá, hemos restaurado 50 hectáreas de manglar que estaban degradadas. Hoy vemos cómo regresa la vida a nuestro ecosistema."
+                        </div>
+                        <div class="testimonial-author">- Ana Rivera, Líder comunitaria</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Nuestro Equipo</h2>
+                    <p class="section-subtitle">Profesionales comprometidos con la conservación de nuestros ecosistemas</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card fade-in">
+                        <img src="https://picsum.photos/seed/estefania-sanchez/400/400.jpg" alt="Estefanía Sánchez-Flores">
+                        <div class="card-body">
+                            <h4>Estefanía Sánchez-Flores</h4>
+                            <div class="team-role">Biología de la Conservación, Educación Ambiental</div>
+                            <div class="team-email"><i class="fas fa-envelope"></i> estefaniasanchez@somosyemanya.org</div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card fade-in">
+                        <img src="https://picsum.photos/seed/merida-ortiz/400/400.jpg" alt="Mérida Ortíz">
+                        <div class="card-body">
+                            <h4>Mérida Ortíz</h4>
+                            <div class="team-role">Cambios Climáticos, Comunidades, Conservación</div>
+                            <div class="team-email"><i class="fas fa-envelope"></i> meridaortiz@somosyemanya.org</div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card fade-in">
+                        <img src="https://picsum.photos/seed/ruben-vinueza/400/400.jpg" alt="Rubén Vinueza-Chérrez">
+                        <div class="card-body">
+                            <h4>Rubén Vinueza-Chérrez</h4>
+                            <div class="team-role">Oceanografía Biológica, Cambio Climático</div>
+                            <div class="team-email"><i class="fas fa-envelope"></i> rubenvinueza@somosyemanya.org</div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card fade-in">
+                        <img src="https://picsum.photos/seed/jon-molinero/400/400.jpg" alt="Jon Molinero">
+                        <div class="card-body">
+                            <h4>Jon Molinero</h4>
+                            <div class="team-role">Ecología Acuática y Calidad de Agua</div>
+                            <div class="team-email"><i class="fas fa-envelope"></i> jonmolinero@somosyemanya.org</div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card fade-in">
+                        <img src="https://picsum.photos/seed/eduardo-rebolledo/400/400.jpg" alt="Eduardo Rebolledo">
+                        <div class="card-body">
+                            <h4>Eduardo Rebolledo</h4>
+                            <div class="team-role">Oceanografía Biológica, Pesquería, Acuicultura</div>
+                            <div class="team-email"><i class="fas fa-envelope"></i> eduardorebolledo@somosyemanya.org</div>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section section-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Noticias y Actualidades</h2>
+                    <p class="section-subtitle">Mantente informado sobre nuestras actividades y logros</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/news-turtle-release/400/250.jpg" alt="Liberación de Tortugas">
+                        <div class="card-body">
+                            <div class="text-muted small mb-2">15 de junio, 2024</div>
+                            <h4>Liberación Exitosa de 200 Tortugas Marinas</h4>
+                            <p>Este mes celebramos la liberación de 200 crías de tortuga marina en las playas de Esmeraldas...</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/news-mangrove-planting/400/250.jpg" alt="Plantación de Manglares">
+                        <div class="card-body">
+                            <div class="text-muted small mb-2">8 de junio, 2024</div>
+                            <h4>Comunidades Unidas por los Manglares</h4>
+                            <p>Más de 100 voluntarios participaron en la jornada de reforestación de manglares...</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card fade-in">
+                        <img src="https://picsum.photos/seed/news-environmental-education/400/250.jpg" alt="Educación Ambiental">
+                        <div class="card-body">
+                            <div class="text-muted small mb-2">1 de junio, 2024</div>
+                            <h4>Nuevo Programa de Educación Ambiental</h4>
+                            <p>Lanzamos nuestro programa "Guardianes del Agua" en 10 escuelas de la provincia...</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">Ver Todas las Noticias</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="mb-4">Suscríbete a Nuestro Boletín</h2>
+                    <p class="mb-4">Recibe las últimas noticias sobre nuestros proyectos y actividades de conservación</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            <button class="btn" type="submit">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-title">Apoya Nuestra Causa</h2>
+                    <p class="section-subtitle">Tu contribución nos permite continuar con nuestros proyectos de conservación</p>
+                    <div class="row mt-5">
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="card border-0 shadow fade-in">
+                                <div class="card-body text-center">
+                                    <h3 class="text-primary">$10</h3>
+                                    <p>Contribución básica</p>
+                                    <button class="btn btn-outline-primary btn-sm">Donar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="card border-0 shadow fade-in">
+                                <div class="card-body text-center">
+                                    <h3 class="text-primary">$25</h3>
+                                    <p>Contribución regular</p>
+                                    <button class="btn btn-outline-primary btn-sm">Donar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="card border-0 shadow fade-in">
+                                <div class="card-body text-center">
+                                    <h3 class="text-primary">$50</h3>
+                                    <p>Contribución destacada</p>
+                                    <button class="btn btn-outline-primary btn-sm">Donar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="card border-0 shadow fade-in">
+                                <div class="card-body text-center">
+                                    <h3 class="text-primary">$100</h3>
+                                    <p>Contribución especial</p>
+                                    <button class="btn btn-outline-primary btn-sm">Donar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-primary btn-lg">Donar Otra Cantidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Contacto</h2>
+                    <p class="section-subtitle">Estamos aquí para responder tus preguntas y escuchar tus ideas</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 shadow fade-in">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Dirección</h4>
+                            <p>Esmeraldas, Ecuador</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 shadow fade-in">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Correo Electrónico</h4>
+                            <p>info@somosyemanya.org</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 border-0 shadow fade-in">
+                        <div class="card-body p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>Sitio Web</h4>
+                            <p>www.somosyemanya.org</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow fade-in">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Envíanos un Mensaje</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Asunto</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Yemanyá - Agua y Conservación</h5>
+                    <p>Organización ecuatoriana sin fines de lucro dedicada a la conservación de ecosistemas marino-costeros y de aguas dulces continentales.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <a href="#about">Nosotros</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#services">Servicios</a>
+                    <a href="#team">Equipo</a>
+                    <a href="#news">Noticias</a>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Áreas de Trabajo</h5>
+                    <a href="#">Ecosistemas Marino-Costeros</a>
+                    <a href="#">Ecosistemas Acuáticos</a>
+                    <a href="#">Educación Ambiental</a>
+                    <a href="#">Cambio Climático</a>
+                    <a href="#">Investigación</a>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Recursos</h5>
+                    <a href="#">Publicaciones</a>
+                    <a href="#">Galería</a>
+                    <a href="#">Videos</a>
+                    <a href="#">Descargas</a>
+                    <a href="#">Prensa</a>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Legal</h5>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Uso</a>
+                    <a href="#">Transparencia</a>
+                    <a href="#">Voluntariado</a>
+                    <a href="#">Donaciones</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Yemanyá - Agua y Conservación. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => animateCounters(), 10);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Trigger counter animation when stats section is in view
+        const statsSection = document.querySelector('.stats-section');
+        let statsAnimated = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!statsAnimated && isInViewport(statsSection)) {
+                animateCounters();
+                statsAnimated = true;
+            }
+        });
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= window.innerHeight && 
+                rect.bottom >= 0
+            );
+        }
+        
+        // Fade in animation on scroll
+        function checkFadeIn() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                if (isInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkFadeIn);
+        window.addEventListener('load', checkFadeIn);
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+        
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por suscribirte a nuestro boletín!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
+
