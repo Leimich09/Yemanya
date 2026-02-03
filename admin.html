@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo - Yemanyá</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+    <div class="login-container">
+        <!-- Panel Izquierdo - Bienvenida -->
+        <div class="login-welcome">
+            <div class="login-logo">
+                <!-- Pon aquí tu logo -->
+                <img src="https://z-cdn-media.chatglm.cn/files/d0ddc8f2-fa3b-45cb-8aa9-c89ce6785328_pasted_image_1763097326921.png?auth_key=1863097347-787375e0be82463daaf54efa03df473e-0-a285658282e6c7aabd0223998301f5b1" alt="Yemanyá Logo">
+            </div>
+            
+            <h1>Bienvenido<br>de Vuelta</h1>
+            <p>Sistema de gestión de contenido para el sitio web de Yemanyá. Inicia sesión para administrar proyectos, equipo, galería y más.</p>
+            
+            
+        </div>
+        
+        <!-- Panel Derecho - Formulario -->
+        <div class="login-form-panel">
+            <div class="login-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            
+            <div class="login-card">
+                <h3>Iniciar Sesión</h3>
+                <p>Panel de Administración</p>
+                
+                <form id="loginForm">
+                    <div class="input-wrapper">
+                        <span class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <span class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Contraseña" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="toggleIcon"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="alert alert-danger" id="loginError" style="display: none;"></div>
+                    
+                    <button type="submit" class="btn btn-login w-100">
+                        Ingresar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display: none;">
+    <div class="admin-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2><i class="fas fa-cog me-2"></i>Panel de Administración</h2>
+                    <p class="mb-0 small">Edita todo el contenido de tu sitio web</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="badge bg-success me-3">
+                        <i class="fas fa-user me-1"></i><span id="userEmail"></span>
+                    </span>
+                    <button class="btn btn-outline-light btn-sm" onclick="logoutUser()">
+                        <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-nav">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center flex-wrap">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#stats">Estadísticas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#about">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#projects">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#team">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#gallery">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#news">Noticias</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="tab-content">
+            
+            <!-- ESTADÍSTICAS -->
+            <div class="tab-pane fade show active" id="stats">
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-chart-line me-2"></i>Estadísticas</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Años de Experiencia</label>
+                            <input type="number" class="form-control" id="stat_experience" value="30">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Proyectos Activos</label>
+                            <input type="number" class="form-control" id="stat_projects" value="15">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Comunidades Impactadas</label>
+                            <input type="number" class="form-control" id="stat_communities" value="50">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Hectáreas Protegidas</label>
+                            <input type="number" class="form-control" id="stat_area" value="1000">
+                        </div>
+                    </div>
+                    <button class="btn btn-save" onclick="saveStats()">
+                        <i class="fas fa-save me-2"></i>Guardar Cambios
+                    </button>
+                </div>
+            </div>
+
+            <!-- NOSOTROS -->
+            <div class="tab-pane fade" id="about">
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-users me-2"></i>Quiénes Somos</h3>
+                    <div class="mb-3">
+                        <label class="form-label">Título</label>
+                        <input type="text" class="form-control" id="about_title" value="¿Quiénes somos?">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contenido (separa párrafos con doble Enter)</label>
+                        <textarea class="form-control" id="about_content" rows="10"></textarea>
+                    </div>
+                    <button class="btn btn-save" onclick="saveAbout()">
+                        <i class="fas fa-save me-2"></i>Guardar Cambios
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROYECTOS -->
+            <div class="tab-pane fade" id="projects">
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-project-diagram me-2"></i>Proyectos</h3>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Las imágenes/videos deben estar en la carpeta <code>img/</code>
+                    </div>
+                    <button class="btn btn-add mb-3" onclick="addProject()">
+                        <i class="fas fa-plus me-2"></i>Agregar Proyecto
+                    </button>
+                    <div id="projectsList"></div>
+                    <button class="btn btn-save mt-3" onclick="saveProjects()">
+                        <i class="fas fa-save me-2"></i>Guardar Todos los Proyectos
+                    </button>
+                </div>
+            </div>
+
+            <!-- EQUIPO -->
+            <div class="tab-pane fade" id="team">
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-user-tie me-2"></i>Equipo</h3>
+                    <button class="btn btn-add mb-3" onclick="addTeamMember()">
+                        <i class="fas fa-plus me-2"></i>Agregar Miembro
+                    </button>
+                    <div id="teamList"></div>
+                    <button class="btn btn-save mt-3" onclick="saveTeam()">
+                        <i class="fas fa-save me-2"></i>Guardar Equipo
+                    </button>
+                </div>
+            </div>
+
+            <!-- GALERÍA -->
+            <div class="tab-pane fade" id="gallery">
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-images me-2"></i>Galería</h3>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Las imágenes deben estar en la carpeta <code>img/</code>. 
+                        Para videos agrega <code>type: 'video'</code>
+                    </div>
+                    <button class="btn btn-add mb-3" onclick="addGalleryItem()">
+                        <i class="fas fa-plus me-2"></i>Agregar Imagen/Video
+                    </button>
+                    <div id="galleryList"></div>
+                    <button class="btn btn-save mt-3" onclick="saveGallery()">
+                        <i class="fas fa-save me-2"></i>Guardar Galería
+                    </button>
+                </div>
+            </div>
+
+            <!-- NOTICIAS -->
+            <div class="tab-pane fade" id="news">
+                <div class="content-section">
+                    <h3 class="section-title"><i class="fas fa-newspaper me-2"></i>Noticias</h3>
+                    <button class="btn btn-add mb-3" onclick="addNews()">
+                        <i class="fas fa-plus me-2"></i>Agregar Noticia
+                    </button>
+                    <div id="newsList"></div>
+                    <button class="btn btn-save mt-3" onclick="saveNews()">
+                        <i class="fas fa-save me-2"></i>Guardar Noticias
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Loading overlay -->
+<div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+    <div class="text-center text-white">
+        <div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="mt-3">Guardando cambios...</p>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="js/firebase-admin.js"></script>
+<script>
+    // Función Toggle Password
+    function togglePassword() {
+        const passwordInput = document.getElementById('loginPassword');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
+</script>
+<script src="js/admin-fab.js"></script>
+
+</body>
+</html>

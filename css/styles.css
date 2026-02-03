@@ -1,0 +1,1405 @@
+/* ========================================================================
+   YEMANYÁ - ESTILOS PRINCIPALES
+   Archivo: css/styles.css
+   ======================================================================== */
+
+/* ========================================================================
+   IMPORTACIÓN DE TIPOGRAFÍAS
+   ======================================================================== */
+
+/* Lexend Giga - Tipografía principal para logotipo, títulos y encabezados */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@300;400;500;600;700&display=swap');
+
+/* Nunito - Tipografía secundaria para cuerpos de texto, párrafos y contenido educativo */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+/* Comfortaa - Tipografía de apoyo para elementos gráficos, etiquetas y composiciones visuales */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+/* ========================================================================
+   VARIABLES DE COLOR
+   EDITA AQUÍ: Cambia los colores principales del sitio
+   ======================================================================== */
+:root {
+    --primary-green: #3A6F2F;      /* Verde principal - logos, títulos */
+    --secondary-orange: #D6A200 ;   /* Naranja - botones, acentos */
+    --water-blue: #8CB9BF;         /* Azul agua - iconos, efectos */
+    --dark-blue: #0E4854;          /* Azul oscuro - textos, footer */
+    --light-bg: #f8f9fa;           /* Fondo claro - secciones alternas */
+    --text-dark: #333;             /* Texto principal */
+    --text-light: #666;            /* Texto secundario */
+    
+    /* Tipografías según jerarquía */
+    --font-primary: 'Lexend Giga', sans-serif;      /* Títulos principales y logotipo */
+    --font-secondary: 'Nunito', sans-serif;          /* Cuerpo de texto */
+    --font-accent: 'Comfortaa', sans-serif;          /* Elementos gráficos */
+}
+
+/* ========================================================================
+   ESTILOS GENERALES
+   ======================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    letter-spacing: -0.5px;
+}
+
+/* Tipografía para títulos principales - Lexend Giga */
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -2px;
+}
+
+/* Tipografía para títulos secundarios - Nunito */
+h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+}
+
+/* Párrafos - Nunito */
+p {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+}
+
+/* Texto justificado para contenido */
+.text-justify {
+    text-align: justify;
+}
+
+.project-detail-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ========================================================================
+   NAVEGACIÓN
+   EDITA AQUÍ: Cambia el estilo del menú superior
+   ======================================================================== */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-green) !important;
+    letter-spacing: -1.5px;
+}
+
+/* LOGO MÁS GRANDE */
+.logo {
+    height: 70px; /* Aumentado 65px */
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.navbar-brand:hover .logo {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-family: var(--font-secondary);
+    color: var(--dark-blue) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s;
+    position: relative;
+    letter-spacing: -0.5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-orange);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--water-blue) !important;
+}
+
+/* ========================================================================
+   HERO SECTION (CARRUSEL)
+   ======================================================================== */
+.hero-carousel {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 100vh;
+    position: relative;
+}
+
+.carousel-item img,
+.carousel-item video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.carousel-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.carousel-content h1 {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: -3px;
+}
+
+.carousel-content p {
+    font-family: var(--font-secondary);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    letter-spacing: -0.5px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* ========================================================================
+   ESTADÍSTICAS
+   ======================================================================== */
+.stats-section {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 60px 0;
+}
+
+.stat-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--secondary-orange);
+    letter-spacing: -2.5px;
+}
+
+.stat-label {
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+/* ========================================================================
+   SECCIONES GENERALES
+   ======================================================================== */
+.section {
+    padding: 80px 0;
+}
+
+.section-alt {
+    background-color: var(--light-bg);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: -2px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-orange);
+}
+
+.section-title.text-start::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.section-subtitle {
+    font-family: var(--font-secondary);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+
+/* ========================================================================
+   MISIÓN Y VISIÓN - PADDING MEJORADO
+   ======================================================================== */
+.mission-vision-card .card-body {
+    padding: 40px !important; /* Aumentado el padding */
+}
+
+.mission-vision-card .card-title {
+    font-family: var(--font-primary);
+}
+
+.mission-vision-card .card-text {
+    font-family: var(--font-secondary);
+}
+
+/* ========================================================================
+   TARJETAS DE SERVICIO
+   ======================================================================== */
+.service-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    background-color: var(--water-blue);
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--secondary-orange);
+    transform: scale(1.1);
+}
+
+.service-card .card-body {
+    padding: 30px;
+}
+
+.service-card h4 {
+    font-family: var(--font-primary);
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.service-card p {
+    font-family: var(--font-secondary);
+}
+
+/* ========================================================================
+   TARJETAS DE PROYECTO - ALTURA UNIFORME
+   ======================================================================== */
+.project-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.project-card img,
+.project-card video {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-card:hover img,
+.project-card:hover video {
+    transform: scale(1.05);
+}
+
+.project-card .card-body {
+    padding: 20px;
+}
+
+.project-card h4 {
+    font-family: var(--font-primary);
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    letter-spacing: -1px;
+}
+
+.project-card .project-location {
+    font-family: var(--font-accent);
+    color: var(--secondary-orange);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.project-card p {
+    font-family: var(--font-secondary);
+}
+
+/* ========================================================================
+   TARJETAS DE EQUIPO - SIN REDES SOCIALES, CON MODALES
+   ======================================================================== */
+.team-card {
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.team-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-card .card-body {
+    padding: 20px;
+}
+
+.team-card h4 {
+    font-family: var(--font-primary);
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.team-card .team-email {
+    font-family: var(--font-accent);
+    color: var(--water-blue);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.team-card .team-email a {
+    color: var(--water-blue);
+    text-decoration: none;
+}
+
+.team-card .team-email a:hover {
+    color: var(--secondary-orange);
+}
+
+/* ========================================================================
+   GALERÍA DE IMÁGENES - Estilos Mejorados
+   ======================================================================== */
+
+/* Reducir espacio entre título y galería */
+.section-subtitle.mb-4 {
+    margin-bottom: 1rem !important;
+}
+
+/* Grid de galería */
+.gallery-grid {
+    margin-top: 20px; /* Reducido de 30px */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 140, 90, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* ========================================================================
+   LIGHTBOX (Modal de imagen grande)
+   ======================================================================== */
+/* Fondo oscuro del lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(4px);
+}
+
+/* Contenido central del lightbox */
+.lightbox-content {
+    max-width: 85vw;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+/* Botón cerrar */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 42px;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.lightbox-close:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Texto descriptivo abajo de la imagen */
+.lightbox-caption {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    margin-top: 16px;
+    text-align: center;
+    max-width: 70%;
+    padding: 0 20px;
+    letter-spacing: 0.3px;
+}
+
+/* Contador (ej: 3 / 36) */
+.lightbox-counter {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 14px;
+    border-radius: 20px;
+}
+
+/* Flecha anterior */
+.lightbox-prev {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 38px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.lightbox-prev:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* Flecha siguiente */
+.lightbox-next {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 38px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* Video dentro del lightbox */
+.lightbox video {
+    max-width: 85vw;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive flecas en móvil */
+@media (max-width: 600px) {
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+    }
+    .lightbox-prev { left: 6px; }
+    .lightbox-next { right: 6px; }
+    
+    .lightbox-content {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+    
+    .lightbox-close {
+        top: 12px;
+        right: 16px;
+        font-size: 34px;
+    }
+}
+
+/* ============================================
+   GALERÍA GRID - Mejoras de rendimiento
+   ============================================ */
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #e9ecef;
+}
+
+.gallery-item img,
+.gallery-item video {
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+}
+
+.gallery-overlay i {
+    color: rgba(255, 255, 255, 0);
+    font-size: 32px;
+    transition: color 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.gallery-item:hover .gallery-overlay i {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Icono de play en videos */
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 40px;
+    pointer-events: none;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Placeholder gris mientras carga */
+.gallery-lazy {
+    background: #e9ecef;
+}
+
+/* ========================================================================
+   MODAL GALERÍA COMPLETA
+   ======================================================================== */
+#galleryModal .modal-body {
+    padding: 20px;
+}
+
+#galleryModal .gallery-item {
+    margin-bottom: 0;
+}
+
+#galleryModal .gallery-item img {
+    height: 180px;
+}
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+@media (max-width: 768px) {
+    .gallery-item img {
+        height: 150px;
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    #galleryModal .gallery-item img {
+        height: 120px;
+    }
+}
+
+/* ========================================================================
+   FOOTER
+   ======================================================================== */
+.footer {
+    background-color: #0d1f2d;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer h5 {
+    font-family: var(--font-primary);
+    color: var(--secondary-orange);
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.footer a {
+    font-family: var(--font-secondary);
+    color: #b0c4de;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer a:hover {
+    color: var(--secondary-orange);
+    padding-left: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin: 0 5px;
+    transition: all 0.3s;
+    color: white;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-orange);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    color: #b0c4de;
+}
+
+/* ========================================================================
+   BOTONES
+   ======================================================================== */
+.btn-primary {
+    font-family: var(--font-secondary);
+    background-color: var(--primary-green);
+    border: none;
+    padding: 12px 25px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s;
+    letter-spacing: -0.5px;
+}
+
+.btn-primary:hover {
+    background-color: #1e6e48;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    font-family: var(--font-secondary);
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 500;
+    transition: all 0.3s;
+    letter-spacing: -0.5px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========================================================================
+   ANIMACIONES
+   ======================================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================================================
+   MODALES
+   ======================================================================== */
+.modal-header {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-title {
+    font-family: var(--font-primary);
+    color: white;
+    letter-spacing: -1px;
+}
+
+/* ========================================================================
+   LAZY LOADING - Efecto de carga suave OPTIMIZADO
+   ======================================================================== */
+img.lazy-load {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    background: #f0f0f0;
+    min-height: 200px;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* ========================================================================
+   ITEMS DE GALERÍA - CON WILL-CHANGE para mejor rendimiento
+   ======================================================================== */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.1);
+}
+
+/* Ícono de PLAY para videos */
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    pointer-events: none;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    z-index: 2;
+    opacity: 0.9;
+}
+
+/* Video en lightbox */
+#lightbox-video {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+/* ========================================================================
+   OPTIMIZACIONES ADICIONALES
+   ======================================================================== */
+
+/* Reducir repaints durante scroll */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mejorar rendimiento de animaciones */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item,
+    .gallery-item img,
+    .gallery-item video,
+    .gallery-overlay {
+        transition: none;
+    }
+}
+
+/* ========================================================================
+   RESPONSIVE
+   EDITA AQUÍ: Ajusta los estilos para móviles
+   ======================================================================== */
+@media (max-width: 768px) {
+    .carousel-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .logo {
+        height: 50px; /* Reducido en móviles */
+    }
+    
+    .gallery-item img,
+    .gallery-item video {
+        height: 150px;
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    #lightbox-video {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    .video-play-icon {
+        font-size: 2rem;
+    }
+    
+    #galleryModal .gallery-item img,
+    #galleryModal .gallery-item video {
+        height: 120px;
+    }
+}
+
+/* ========================================================================
+   FIX RESPONSIVO ADICIONAL
+   ======================================================================== */
+
+/* Mejorar el espaciado en móviles */
+@media (max-width: 767px) {
+    /* Botones de la sección Nosotros */
+    #about .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    #about .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Remover la clase me-3 (margin-end) en móviles */
+    #about .me-3 {
+        margin-right: 0 !important;
+    }
+}
+
+/* ============================================
+   FIX HERO CAROUSEL - Responsive mejorado
+   ============================================ */
+
+/* Ajustar altura del carousel según pantalla */
+#heroCarousel .carousel-inner {
+    min-height: 500px; /* Pantallas normales */
+}
+
+/* Ajustar posición del contenido para evitar que el navbar lo tape */
+#heroCarousel .carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    padding-top: 80px; /* Espacio para el navbar */
+}
+
+/* En pantallas medianas/pequeñas donde el navbar puede ser más grande */
+@media (max-width: 1400px) {
+    #heroCarousel .carousel-caption {
+        padding-top: 100px; /* Más espacio */
+    }
+}
+
+@media (max-width: 991px) {
+    #heroCarousel .carousel-inner {
+        min-height: 450px;
+    }
+    
+    #heroCarousel .carousel-caption {
+        padding-top: 70px;
+    }
+    
+    #heroCarousel .carousel-caption h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #heroCarousel .carousel-inner {
+        min-height: 400px;
+    }
+    
+    #heroCarousel .carousel-caption {
+        padding-top: 60px;
+    }
+    
+    #heroCarousel .carousel-caption h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   LOGO NAVBAR - Más grande sin afectar altura
+   ============================================ */
+
+/* Logo más grande */
+.navbar-brand img {
+    height: 65px !important; /* Antes era ~50px */
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* El navbar se mantiene compacto */
+.navbar {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* Cuando hace scroll, el logo se hace ligeramente más chico */
+.navbar.scrolled .navbar-brand img {
+    height: 55px !important;
+}
+
+/* Centrar verticalmente el logo */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* Los links del navbar se alinean con el logo */
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+}
+
+/* En móvil, logo más pequeño */
+@media (max-width: 991px) {
+    .navbar-brand img {
+        height: 50px !important;
+    }
+}
+
+/* ============================================
+   ALTERNATIVA: Si el navbar tiene clase .navbar-expand-lg
+   ============================================ */
+.navbar-expand-lg {
+    min-height: auto;
+}
+
+/* Asegurar que el navbar no sea demasiado alto */
+.navbar > .container,
+.navbar > .container-fluid {
+    min-height: auto;
+    align-items: center;
+}
+
+/* ============================================
+   ARREGLOS FINALES - Galería + Admin
+   ============================================ */
+
+/* ============================================
+   1. VIDEO DEL MISMO TAMAÑO EN MODAL GALERÍA
+   ============================================ */
+
+/* En la galería completa (modal) */
+#full-gallery-grid .gallery-item {
+    height: 180px; /* Altura fija para todos */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+#full-gallery-grid .gallery-item img,
+#full-gallery-grid .gallery-item video {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+/* En el preview (index principal) */
+#gallery-preview .gallery-item {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+#gallery-preview .gallery-item img,
+#gallery-preview .gallery-item video {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block;
+}
+
+/* ============================================
+   2. LUPA POR ENCIMA DEL ICONO DE PLAY
+   ============================================ */
+
+/* El overlay debe estar encima de TODO */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+    z-index: 10; /* ⬅️ Encima del play */
+}
+
+/* El icono de play debe estar DEBAJO del overlay */
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 40px;
+    pointer-events: none;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    z-index: 5; /* ⬅️ Debajo del overlay */
+}
+
+/* Cuando haces hover, se oscurece TODO y la lupa aparece */
+.gallery-item:hover .gallery-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Más oscuro */
+}
+
+.gallery-overlay i {
+    color: rgba(255, 255, 255, 0);
+    font-size: 32px;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 11; /* ⬅️ La lupa encima de todo */
+}
+
+.gallery-item:hover .gallery-overlay i {
+    color: rgba(255, 255, 255, 1); /* Lupa visible */
+}
+
+/* El play se atenúa un poco al hacer hover */
+.gallery-item:hover .video-play-icon {
+    opacity: 0.5;
+}
+
+/* ============================================
+   3. SELECTOR DE TIPO DE ARCHIVO - MÁS COMPACTO
+   ============================================ */
+
+/* Selectores en TODOS los forms del admin */
+select.form-control,
+.form-select,
+select {
+    padding: 7px 30px 7px 10px !important;
+    font-size: 13px !important;
+    height: 36px !important;
+    min-height: auto !important;
+    line-height: 1.4 !important;
+    background-position: right 8px center !important;
+    background-size: 14px 10px !important;
+}
+
+/* Si está dentro de una columna pequeña (col-md-4, col-md-6) */
+.col-md-4 select,
+.col-md-6 select {
+    max-width: 150px; /* Ancho máximo */
+}
+
+/* Label de los selectores un poco más pequeño */
+select + label,
+label + select {
+    font-size: 13px;
+}
+
+/* ============================================
+   EXTRAS - Por si acaso
+   ============================================ */
+
+/* Asegurar que el container de la galería no tenga overflow */
+.gallery-grid {
+    overflow: visible;
+}
+
+/* Items de galería con posición relativa para que z-index funcione */
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+    background: #e9ecef;
+}
+
+/* Transición suave en imágenes */
+.gallery-item img,
+.gallery-item video {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVE - Ajustes para móvil
+   ============================================ */
+
+@media (max-width: 768px) {
+    #gallery-preview .gallery-item {
+        height: 150px;
+    }
+    
+    #gallery-preview .gallery-item img,
+    #gallery-preview .gallery-item video {
+        height: 150px !important;
+    }
+    
+    #full-gallery-grid .gallery-item {
+        height: 150px;
+    }
+    
+    #full-gallery-grid .gallery-item img,
+    #full-gallery-grid .gallery-item video {
+        height: 150px !important;
+    }
+    
+    .video-play-icon {
+        font-size: 32px;
+    }
+    
+    .gallery-overlay i {
+        font-size: 26px;
+    }
+}

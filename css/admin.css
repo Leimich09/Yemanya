@@ -1,0 +1,782 @@
+/* ============================================
+   ADMIN YEMANYÁ - DISEÑO PROFESIONAL
+   Sin efectos "IA" - Limpio y funcional
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    --yemanya-green: #3A6F2F;
+    --yemanya-gold: #D6A200;
+    --yemanya-terracotta: #D56C0F;
+    --yemanya-blue-dark: #0E4854;
+    --yemanya-blue-water: #8CB9BF;
+    --yemanya-brown: #2C2118;
+    
+    --font-titles: 'Lexend', Verdana, sans-serif;
+    --font-body: 'Nunito', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: #f8f9fa;
+    color: var(--yemanya-brown);
+}
+
+
+/* ============================================
+   HEADER
+   ============================================ */
+.admin-header {
+    background: var(--yemanya-green);
+    color: white;
+    padding: 18px 0;
+    border-bottom: 3px solid var(--yemanya-gold);
+}
+
+.admin-header h2 {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.admin-header .badge {
+    background: white !important;
+    color: var(--yemanya-green);
+    font-family: var(--font-body);
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+.admin-nav {
+    background: white;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-nav .nav-pills .nav-link {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--yemanya-brown);
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin: 0 4px;
+    font-size: 0.95rem;
+}
+
+.admin-nav .nav-pills .nav-link:hover {
+    background: #f1f3f5;
+    color: var(--yemanya-green);
+}
+
+.admin-nav .nav-pills .nav-link.active {
+    background: var(--yemanya-blue-dark);
+    color: white;
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+.content-section {
+    background: white;
+    padding: 28px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    color: var(--yemanya-green);
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--yemanya-gold);
+    font-size: 1.4rem;
+}
+
+.section-title i {
+    color: var(--yemanya-gold);
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+.form-label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--yemanya-brown);
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--yemanya-blue-dark);
+    box-shadow: 0 0 0 3px rgba(14, 72, 84, 0.1);
+    outline: none;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.text-muted {
+    color: #6c757d !important;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   CARDS - DISEÑO LIMPIO
+   ============================================ */
+.item-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-left: 3px solid var(--yemanya-green);
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 18px;
+    position: relative;
+    transition: box-shadow 0.2s;
+}
+
+.item-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.item-card h5 {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    color: var(--yemanya-green);
+    margin-bottom: 18px;
+    padding-right: 50px;
+    font-size: 1.1rem;
+}
+
+.item-card h5 i {
+    color: var(--yemanya-gold);
+    margin-right: 6px;
+}
+
+/* ============================================
+   SELECTOR IMAGEN/VIDEO - LIMPIO
+   ============================================ */
+.media-type-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.media-type-option {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+    font-weight: 600;
+    background: white;
+}
+
+.media-type-option:hover {
+    border-color: var(--yemanya-blue-water);
+    background: #f8f9fa;
+}
+
+.media-type-option.active {
+    border-color: var(--yemanya-green);
+    background: var(--yemanya-green);
+    color: white;
+}
+
+.media-type-option i {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+/* ============================================
+   VISTA PREVIA - SIMPLE
+   ============================================ */
+.preview-container {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.preview-container img,
+.preview-container video {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+/* ============================================
+   BOTONES - PROFESIONALES
+   ============================================ */
+.btn-save {
+    background: var(--yemanya-green);
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: background 0.2s;
+    font-size: 0.95rem;
+}
+
+.btn-save:hover {
+    background: #2f5a26;
+}
+
+.btn-add {
+    background: var(--yemanya-gold);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: background 0.2s;
+    font-size: 0.95rem;
+}
+
+.btn-add:hover {
+    background: #b89200;
+}
+
+/* Botón eliminar - SIN resplandor IA */
+.delete-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: var(--yemanya-terracotta);
+    border: 1px solid var(--yemanya-terracotta);
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: var(--yemanya-terracotta);
+    color: white;
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#loadingOverlay .spinner-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-color: var(--yemanya-gold);
+    border-right-color: transparent;
+}
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast {
+    font-family: var(--font-body);
+    border-radius: 4px;
+}
+
+.toast.bg-success {
+    background-color: var(--yemanya-green) !important;
+}
+
+.toast .toast-body {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ALERTS
+   ============================================ */
+.alert-info {
+    background-color: #e8f4f8;
+    border: 1px solid var(--yemanya-blue-water);
+    color: var(--yemanya-blue-dark);
+    font-family: var(--font-body);
+    border-radius: 4px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .admin-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .admin-nav .nav-pills .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        margin: 3px 2px;
+    }
+    
+    .item-card {
+        padding: 18px;
+    }
+    
+    .content-section {
+        padding: 20px;
+    }
+    
+    .login-card {
+        padding: 35px 25px;
+    }
+}
+
+/* ============================================
+   ADMIN PANEL - EXTRAS
+   - Botón guardar por cada sección
+   - Botón + flotante
+   ============================================ */
+
+/* ============================================
+   BOTÓN GUARDAR POR SECCIÓN (dentro de cada card)
+   ============================================ */
+.section-save-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0 4px 0;
+    margin-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+.btn-guardar {
+    background: #3A6F2F;
+    color: white;
+    border: none;
+    padding: 9px 24px;
+    border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-guardar:hover {
+    background: #2f5a26;
+    transform: translateY(-1px);
+}
+
+.btn-guardar:active {
+    transform: translateY(0);
+}
+
+.btn-guardar i {
+    font-size: 13px;
+}
+
+/* ============================================
+   BOTÓN + FLOTANTE (aparece al hacer scroll)
+   ============================================ */
+.fab-add {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
+    background: #D6A200;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 999;
+    display: none; /* Se muestra solo al hacer scroll */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.fab-add:hover {
+    background: #c49600;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.fab-add:active {
+    transform: scale(0.95);
+}
+
+/* Tooltip del FAB */
+.fab-add .fab-tooltip {
+    position: absolute;
+    right: 68px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.fab-add:hover .fab-tooltip {
+    opacity: 1;
+}
+
+/* ============================================
+   MEJORAS ADMIN - Indicador de edición + hovers
+   ============================================ */
+
+/* ============================================
+   INDICADOR DE EDICIÓN - Borde amarillo al editar
+   ============================================ */
+.item-card {
+    position: relative;
+    border-left: 4px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cuando un input/textarea tiene focus, la card se marca */
+.item-card:focus-within {
+    border-left-color: #D6A200 !important;
+    box-shadow: -2px 0 8px rgba(214, 162, 0, 0.2);
+}
+
+/* Alternativa: agregar indicador visual */
+.item-card::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #D6A200;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.item-card:focus-within::before {
+    opacity: 1;
+}
+
+/* Tag "Editando..." que aparece al enfocar */
+.item-card:focus-within h5::after {
+    content: ' • Editando...';
+    color: #D6A200;
+    font-size: 13px;
+    font-weight: 500;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* ============================================
+   SELECTOR DE TIPO DE ARCHIVO - Compacto
+   ============================================ */
+select.form-control,
+.form-select {
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* Si usas col-md-4 o col-md-6 para el selector */
+.col-md-4 select.form-control,
+.col-md-6 select.form-control {
+    max-width: 140px; /* Más compacto */
+}
+
+/* ============================================
+   HOVERS DINÁMICOS - Sin exagerar
+   ============================================ */
+
+/* Botones principales */
+.btn-primary,
+.btn-success,
+.btn-guardar,
+.btn-dorado {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-guardar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active,
+.btn-success:active,
+.btn-guardar:active {
+    transform: translateY(0);
+}
+
+/* Botón eliminar - hover sutil */
+.delete-btn {
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #D56C0F !important;
+    transform: scale(1.05);
+}
+
+.delete-btn:active {
+    transform: scale(0.95);
+}
+
+/* Botón agregar (dorado) */
+.btn-dorado:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 14px rgba(214, 162, 0, 0.25);
+}
+
+/* Inputs con hover sutil */
+.form-control:hover:not(:disabled):not(:focus) {
+    border-color: #8CB9BF;
+    box-shadow: 0 0 0 0.1rem rgba(140, 185, 191, 0.15);
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #3A6F2F;
+    box-shadow: 0 0 0 0.2rem rgba(58, 111, 47, 0.15);
+}
+
+/* Tab hover más vivo */
+.nav-link {
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-link:not(.active):hover {
+    background: rgba(58, 111, 47, 0.08) !important;
+    transform: translateX(3px);
+}
+
+/* Animación sutil en las cards al cargar */
+.item-card {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover en preview de imágenes/videos */
+.preview-container img,
+.preview-container video,
+.gallery-preview img,
+.gallery-preview video {
+    transition: transform 0.25s ease;
+    border-radius: 6px;
+}
+
+.preview-container:hover img,
+.preview-container:hover video,
+.gallery-preview:hover img,
+.gallery-preview:hover video {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   VIDEO EN MODAL GALERÍA - Mismo tamaño
+   ============================================ */
+#full-gallery-grid video {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover !important;
+}
+
+/* También en el preview principal */
+#gallery-preview video {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+}
+
+/* ============================================
+   FAB - Hover más dinámico
+   ============================================ */
+.fab-add {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fab-add:hover {
+    transform: scale(1.15) rotate(90deg);
+}
+
+.fab-add:active {
+    transform: scale(0.9) rotate(90deg);
+}
+
+/* ============================================
+   FAB MÁS PEQUEÑO
+   Agrega esto a tu admin-extras.css
+   o reemplaza la sección del FAB
+   ============================================ */
+
+.fab-add {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;        
+    height: 48px;       
+    background: #D6A200;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;    
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, box-shadow 0.2s;
+}
+
+.fab-add:hover {
+    background: #c49600;
+    transform: scale(1.15) rotate(90deg);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.fab-add:active {
+    transform: scale(0.9) rotate(90deg);
+}
+
+/* Tooltip del FAB */
+.fab-add .fab-tooltip {
+    position: absolute;
+    right: 58px;        
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;  
+    border-radius: 5px;
+    font-size: 12px;    
+    font-family: 'Nunito', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.fab-add:hover .fab-tooltip {
+    opacity: 1;
+}
+
+/* ============================================
+   VARIANTES DE TAMAÑO
+   Descomenta la que prefieras:
+   ============================================ */
+
+/* OPCIÓN 1: Extra pequeño (40px) */
+/*
+.fab-add {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 20px;
+}
+.fab-add .fab-tooltip {
+    right: 50px;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+*/
+
+/* OPCIÓN 2: Mediano (44px) */
+
+.fab-add {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+}
+.fab-add .fab-tooltip {
+    right: 54px;
+}
+
+
+/* OPCIÓN 3: Grande original (56px) */
+/*
+.fab-add {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+}
+.fab-add .fab-tooltip {
+    right: 68px;
+}
+*/

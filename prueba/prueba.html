@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Yemanyá</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="prueba.css">
+</head>
+<body>
+
+<div id="loginScreen">
+    <div class="login-container">
+        <!-- Panel Izquierdo - Branding -->
+        <div class="login-brand-panel">
+            <div class="brand-content">
+                <div class="logo-container">
+                    <div class="logo-circle">
+                        <img src="https://z-cdn-media.chatglm.cn/files/d0ddc8f2-fa3b-45cb-8aa9-c89ce6785328_pasted_image_1763097326921.png?auth_key=1863097347-787375e0be82463daaf54efa03df473e-0-a285658282e6c7aabd0223998301f5b1" alt="Yemanyá Logo">
+                    </div>
+                </div>
+                
+                <div class="brand-text">
+                    <h1 class="brand-title">Yemanyá</h1>
+                    <p class="brand-subtitle">Panel de Administración</p>
+                    <div class="brand-divider"></div>
+                    <p class="brand-description">
+                        Gestiona el contenido de tu sitio web, proyectos, equipo y galería desde un solo lugar.
+                    </p>
+                </div>
+
+                <div class="decorative-elements">
+                    <div class="wave wave-1"></div>
+                    <div class="wave wave-2"></div>
+                    <div class="wave wave-3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panel Derecho - Formulario -->
+        <div class="login-form-panel">
+            <div class="form-container">
+                <div class="form-header">
+                    <div class="user-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h2>Bienvenido</h2>
+                    <p>Ingresa tus credenciales para continuar</p>
+                </div>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="alert alert-danger fade" id="loginError" role="alert">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        <span id="errorMessage"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginEmail" class="form-label">
+                            <i class="fas fa-envelope me-2"></i>Correo Electrónico
+                        </label>
+                        <div class="input-container">
+                            <span class="input-icon">
+                                <i class="fas fa-at"></i>
+                            </span>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="loginEmail" 
+                                placeholder="tu@correo.com" 
+                                required
+                                autocomplete="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword" class="form-label">
+                            <i class="fas fa-lock me-2"></i>Contraseña
+                        </label>
+                        <div class="input-container">
+                            <span class="input-icon">
+                                <i class="fas fa-key"></i>
+                            </span>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="loginPassword" 
+                                placeholder="••••••••" 
+                                required
+                                autocomplete="current-password">
+                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                <i class="fas fa-eye" id="toggleIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-login">
+                        <span class="btn-text">Iniciar Sesión</span>
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p class="security-note">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Conexión segura y cifrada
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function togglePassword() {
+    const passwordInput = document.getElementById('loginPassword');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    }
+}
+
+// Simulación de login
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const errorDiv = document.getElementById('loginError');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    // Aquí iría tu lógica de autenticación con Firebase
+    // Por ahora, solo un ejemplo
+    
+    if (email === 'admin@yemanya.com' && password === '123456') {
+        // Login exitoso
+        window.location.href = 'admin.html';
+    } else {
+        // Mostrar error
+        errorMessage.textContent = 'Credenciales incorrectas. Por favor, verifica tu correo y contraseña.';
+        errorDiv.classList.add('show');
+        
+        setTimeout(() => {
+            errorDiv.classList.remove('show');
+        }, 5000);
+    }
+});
+
+// Limpiar error al escribir
+document.getElementById('loginEmail').addEventListener('input', function() {
+    document.getElementById('loginError').classList.remove('show');
+});
+
+document.getElementById('loginPassword').addEventListener('input', function() {
+    document.getElementById('loginError').classList.remove('show');
+});
+</script>
+</body>
+</html>
