@@ -1403,3 +1403,106 @@ label + select {
         font-size: 26px;
     }
 }
+
+/* ============================================
+   ESTILOS PARA DONACIONES Y BOTÓN DONAR
+   ============================================ */
+
+/* BOTÓN DONAR EN NAVBAR - DESTACADO */
+.btn-donate {
+    background: linear-gradient(135deg, #3A6F2F 0%, #97BC62 100%);
+    color: #fff !important;
+    padding: 8px 20px !important;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(58, 111, 47, 0.3);
+    margin-left: 10px;
+}
+
+.btn-donate:hover {
+    background: linear-gradient(135deg, #2D5A25 0%, #7FA04F 100%);
+    box-shadow: 0 4px 12px rgba(58, 111, 47, 0.5);
+    transform: translateY(-2px);
+    color: #fff !important;
+}
+
+/* Responsive - botón en móvil */
+@media (max-width: 991px) {
+    .btn-donate {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+/* SECCIÓN DE DONACIONES */
+#donations {
+    background: #F5F5F5;
+}
+
+/* Tarjeta de cuenta bancaria */
+.donation-account-card {
+    background: #fff;
+    border-left: 4px solid #3A6F2F;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.donation-account-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.donation-account-card h5 {
+    color: #3A6F2F;
+    font-weight: 600;
+    border-bottom: 2px solid #97BC62;
+    padding-bottom: 10px;
+}
+
+.donation-account-card strong {
+    color: #0E4854;
+    font-weight: 600;
+}
+
+/* Contenedor de cuentas */
+.donations-accounts {
+    margin-top: 30px;
+}
+
+/* Icono en el header */
+#donations .service-icon {
+    background: #8CB9BF;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 32px;
+    box-shadow: 0 3px 10px rgba(140, 185, 191, 0.3);
+}
+
+/* Lead text */
+#donations .lead {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .donation-account-card {
+        padding: 15px;
+    }
+    
+    .donation-account-card h5 {
+        font-size: 1.1rem;
+    }
+}

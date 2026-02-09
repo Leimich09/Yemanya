@@ -13,38 +13,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lightbox-styles.css">
+    <link rel="stylesheet" href="css/responsive-fixes.css">
+    <link rel="stylesheet" href="css/galeria-fixes-final.css">
+    <link rel="stylesheet" href="css/donaciones.css">
 </head>
 <body>
 
-<!-- 
-========================================================================
-ÍNDICE DE NAVEGACIÓN RÁPIDA - USA CTRL+F PARA BUSCAR
-========================================================================
-Línea 45:   NAVEGACIÓN (menú superior)
-Línea 80:   HERO/CARRUSEL (imágenes principales)
-Línea 140:  ESTADÍSTICAS (números de impacto)
-Línea 180:  NOSOTROS (quiénes somos)
-Línea 220:  MISIÓN Y VISIÓN
-Línea 270:  PROYECTOS (tarjetas de proyectos - 6 proyectos)
-Línea 500:  SERVICIOS (ecosistemas marino-costeros, etc.)
-Línea 630:  EQUIPO (miembros del equipo)
-Línea 750:  GALERÍA DE IMÁGENES
-Línea 800:  NOTICIAS (actualidades)
-Línea 870:  CONTACTO (información de contacto)
-Línea 940:  FOOTER (pie de página)
-Línea 1000: MODALES DE PROYECTOS
-Línea 1200: MODALES DE EQUIPO
-========================================================================
--->
-
-<!-- ============================================
-     SECCIÓN: NAVEGACIÓN
-     Edita aquí los links del menú principal
-     ============================================ -->
+<!-- NAVEGACIÓN -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <!-- EDITA AQUÍ: Cambia la URL del logo si es necesario -->
             <img src="https://z-cdn-media.chatglm.cn/files/d0ddc8f2-fa3b-45cb-8aa9-c89ce6785328_pasted_image_1763097326921.png?auth_key=1863097347-787375e0be82463daaf54efa03df473e-0-a285658282e6c7aabd0223998301f5b1" alt="Yemanyá Logo" class="logo">
             Yemanyá
         </a>
@@ -52,7 +31,6 @@ Línea 1200: MODALES DE EQUIPO
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- EDITA AQUÍ: Agrega o elimina items del menú según necesites -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#about">Nosotros</a>
@@ -72,18 +50,17 @@ Línea 1200: MODALES DE EQUIPO
                 <li class="nav-item">
                     <a class="nav-link" href="#news">Noticias</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-donate" href="#donations">Donar</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- ============================================
-     SECCIÓN: HERO/CARRUSEL
-     Edita aquí las imágenes y textos principales
-     ============================================ -->
+<!-- HERO/CARRUSEL -->
 <section id="hero" class="hero-carousel">
     <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <!-- Indicadores del carrusel -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
@@ -91,8 +68,6 @@ Línea 1200: MODALES DE EQUIPO
         </div>
         
         <div class="carousel-inner">
-            <!-- SLIDE 1: Conservación de Manglares -->
-            <!-- EDITA AQUÍ: Cambia la imagen, título y descripción -->
             <div class="carousel-item active">
                 <img src="img/IMG-20201115-WA0005.jpg" alt="Conservación de Manglares">
                 <div class="carousel-overlay">
@@ -104,8 +79,6 @@ Línea 1200: MODALES DE EQUIPO
                 </div>
             </div>
             
-            <!-- SLIDE 2: Tortugas Marinas -->
-            <!-- EDITA AQUÍ: Cambia el video, título y descripción -->
             <div class="carousel-item">
                 <video src="img/Eclosion-en-Portete.mp4" autoplay muted loop></video>
                 <div class="carousel-overlay">
@@ -117,8 +90,6 @@ Línea 1200: MODALES DE EQUIPO
                 </div>
             </div>
             
-            <!-- SLIDE 3: Conservación del Agua -->
-            <!-- EDITA AQUÍ: Cambia la imagen, título y descripción -->
             <div class="carousel-item">
                 <img src="img/DSCN3570.jpg" alt="Conservación del Agua">
                 <div class="carousel-overlay">
@@ -131,7 +102,6 @@ Línea 1200: MODALES DE EQUIPO
             </div>
         </div>
         
-        <!-- Controles del carrusel -->
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -141,14 +111,10 @@ Línea 1200: MODALES DE EQUIPO
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: ESTADÍSTICAS
-     Edita aquí los números de impacto
-     ============================================ -->
+<!-- ESTADÍSTICAS -->
 <section class="stats-section">
     <div class="container">
         <div class="row">
-            <!-- EDITA AQUÍ: Cambia los números y textos según tus datos -->
             <div class="col-md-3 col-6">
                 <div class="stat-item">
                     <div class="stat-number" data-target="30">0</div>
@@ -177,16 +143,12 @@ Línea 1200: MODALES DE EQUIPO
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: NOSOTROS
-     Edita aquí la información sobre la organización
-     ============================================ -->
+<!-- NOSOTROS -->
 <section id="about" class="section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4">
                 <div class="fade-in">
-                    <!-- EDITA AQUÍ: Cambia el título y los párrafos -->
                     <h2 class="section-title text-start">¿Quiénes somos?</h2>
                     <p class="text-justify">Yemanyá – Agua y Conservación es una organización ecuatoriana sin fines de lucro fundada en 2024 en Esmeraldas. Estamos registrados ante el Ministerio del Ambiente, Agua y Transición Ecológica de Ecuador.</p>
                     <p class="text-justify">Aunque somos una organización joven, contamos con un equipo con más de 30 años de experiencia en investigación, conservación, educación ambiental y trabajo con comunidades.</p>
@@ -200,7 +162,6 @@ Línea 1200: MODALES DE EQUIPO
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="fade-in">
-                    <!-- EDITA AQUÍ: Cambia la imagen si lo necesitas -->
                     <img src="img/GOPR0122.jpg" alt="Ecosistema de Manglar" class="img-fluid rounded shadow">
                 </div>
             </div>
@@ -208,10 +169,7 @@ Línea 1200: MODALES DE EQUIPO
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: MISIÓN Y VISIÓN
-     Edita aquí los textos de misión y visión
-     ============================================ -->
+<!-- MISIÓN Y VISIÓN -->
 <section id="mission" class="section section-alt">
     <div class="container">
         <div class="row">
@@ -221,7 +179,6 @@ Línea 1200: MODALES DE EQUIPO
             </div>
         </div>
         <div class="row">
-            <!-- EDITA AQUÍ: Visión -->
             <div class="col-lg-6 mb-4">
                 <div class="card h-100 border-0 shadow fade-in mission-vision-card">
                     <div class="card-body">
@@ -233,7 +190,6 @@ Línea 1200: MODALES DE EQUIPO
                     </div>
                 </div>
             </div>
-            <!-- EDITA AQUÍ: Misión -->
             <div class="col-lg-6 mb-4">
                 <div class="card h-100 border-0 shadow fade-in mission-vision-card">
                     <div class="card-body">
@@ -249,11 +205,7 @@ Línea 1200: MODALES DE EQUIPO
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: PROYECTOS (6 PROYECTOS)
-     Edita aquí las tarjetas de proyectos
-     NOTA: Los textos largos están en modales al final
-     ============================================ -->
+<!-- PROYECTOS - Firebase carga aquí -->
 <section id="projects" class="section">
     <div class="container">
         <div class="row">
@@ -263,93 +215,12 @@ Línea 1200: MODALES DE EQUIPO
             </div>
         </div>
         <div class="row">
-            
-            <!-- PROYECTO 1: Tortugas Marinas -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="img/Neonatos en Portete.jpeg" alt="Neonatos en Portete">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Tortugas Marinas</h4>
-                        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Playas de Esmeraldas</div>
-                        <p class="flex-grow-1">Investigación sobre anidaciones de tortugas golfinas en las playas de Galerita y Portete, enfocada en monitoreo, proporción sexual y éxito de eclosión.</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal1">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PROYECTO 2: Educación Ambiental Pescadores -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="img/0.1.Puero pesquro Artesanal Esmeraldas.JPG" alt="Educación Pescadores">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Educación Ambiental Pescadores</h4>
-                        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Puerto Esmeraldas</div>
-                        <p class="flex-grow-1">Programa educativo para reducir la captura incidental de megafauna marina, usando el arte como herramienta pedagógica activa.</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal2">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PROYECTO 3: Monitoreo de Calidad del Agua -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="img/IMG-20201115-WA0005.jpg" alt="Calidad del Agua">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Monitoreo de Calidad del Agua</h4>
-                        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Cuenca del Río Esmeraldas</div>
-                        <p class="flex-grow-1">Monitoreo sistemático de parámetros físicos, químicos y biológicos en ríos y estuarios para la gestión sostenible del recurso hídrico.</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal3">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PROYECTO 4: Conservación Comunitaria de Manglares -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="img/CAM00166.jpg" alt="Manglares">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Conservación Comunitaria del Ecosistema Manglar</h4>
-                        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Comunidades Costeras</div>
-                        <p class="flex-grow-1">Fortalecimiento del manejo comunitario de manglares a través de los AUSCEM, promoviendo la gobernanza participativa y la conservación sostenible.</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal4">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PROYECTO 5: Conservación de los Ríos del Chocó -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="img/Chocó.png" alt="Ríos del Chocó">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Conservación de los Ríos del Chocó Ecuatoriano</h4>
-                        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Provincia de Esmeraldas</div>
-                        <p class="flex-grow-1">Investigación sobre funcionamiento ecológico y biodiversidad de ecosistemas fluviales, fomentando la participación comunitaria y preservación de saberes ancestrales.</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal5">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- PROYECTO 6: Monitoreo de Aves Acuáticas -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="img/aves rio esme.png" alt="Aves Acuáticas">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Monitoreo de Aves Acuáticas en el Estuario del Río Esmeraldas</h4>
-                        <div class="project-location"><i class="fas fa-map-marker-alt"></i> Refugio de Vida Silvestre</div>
-                        <p class="flex-grow-1">Monitoreo de aves como indicadores de cambios ambientales en el Refugio de Vida Silvestre Manglares del Estuario del río Esmeraldas.</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#projectModal6">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
+            <!-- Firebase carga los proyectos aquí -->
         </div>
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: SERVICIOS
-     Edita aquí los servicios ofrecidos
-     ============================================ -->
+<!-- SERVICIOS -->
 <section id="services" class="section section-alt">
     <div class="container">
         <div class="row">
@@ -481,10 +352,7 @@ Línea 1200: MODALES DE EQUIPO
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: EQUIPO (CON MODALES)
-     Edita aquí los miembros del equipo
-     ============================================ -->
+<!-- EQUIPO - Firebase carga aquí -->
 <section id="team" class="section">
     <div class="container">
         <div class="row">
@@ -494,74 +362,12 @@ Línea 1200: MODALES DE EQUIPO
             </div>
         </div>
         <div class="row">
-            
-            <!-- MIEMBRO 1: Estefanía Sánchez-Flores -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="team-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/estefania-sanchez/400/400.jpg" alt="Estefanía Sánchez-Flores">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Estefanía Sánchez-Flores</h4>
-                        <div class="team-email"><i class="fas fa-envelope"></i> <a href="mailto:estefaniasanchez@somosyemanya.org">estefaniasanchez@somosyemanya.org</a></div>
-                        <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamModal1">Ver más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- MIEMBRO 2: Mérida Ortíz -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="team-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/merida-ortiz/400/400.jpg" alt="Mérida Ortíz">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Mérida Ortíz</h4>
-                        <div class="team-email"><i class="fas fa-envelope"></i> <a href="mailto:meridaortiz@somosyemanya.org">meridaortiz@somosyemanya.org</a></div>
-                        <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamModal2">Ver más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- MIEMBRO 3: Rubén Vinueza-Chérrez -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="team-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/ruben-vinueza/400/400.jpg" alt="Rubén Vinueza-Chérrez">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Rubén Vinueza-Chérrez</h4>
-                        <div class="team-email"><i class="fas fa-envelope"></i> <a href="mailto:rubenvinueza@somosyemanya.org">rubenvinueza@somosyemanya.org</a></div>
-                        <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamModal3">Ver más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- MIEMBRO 4: Jon Molinero -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="team-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/jon-molinero/400/400.jpg" alt="Jon Molinero">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Jon Molinero</h4>
-                        <div class="team-email"><i class="fas fa-envelope"></i> <a href="mailto:jonmolinero@somosyemanya.org">jonmolinero@somosyemanya.org</a></div>
-                        <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamModal4">Ver más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- MIEMBRO 5: Eduardo Rebolledo -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="team-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/eduardo-rebolledo/400/400.jpg" alt="Eduardo Rebolledo">
-                    <div class="card-body d-flex flex-column">
-                        <h4>Eduardo Rebolledo</h4>
-                        <div class="team-email"><i class="fas fa-envelope"></i> <a href="mailto:eduardorebolledo@somosyemanya.org">eduardorebolledo@somosyemanya.org</a></div>
-                        <button class="btn btn-sm btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#teamModal5">Ver más</button>
-                    </div>
-                </div>
-            </div>
-            
+            <!-- Firebase carga el equipo aquí -->
         </div>
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: GALERÍA DE IMÁGENES Y VIDEOS
-     ============================================ -->
+<!-- GALERÍA -->
 <section id="gallery" class="section section-alt">
     <div class="container">
         <div class="row">
@@ -571,12 +377,10 @@ Línea 1200: MODALES DE EQUIPO
             </div>
         </div>
         
-        <!-- Preview de 8 items (se genera automáticamente) -->
         <div class="row gallery-grid" id="gallery-preview">
-            <!-- Las 8 primeras fotos/videos se cargan aquí automáticamente -->
+            <!-- Firebase carga las 8 primeras imágenes aquí -->
         </div>
         
-        <!-- Botón Ver Todas -->
         <div class="text-center mt-4">
             <button class="btn btn-primary btn-lg" onclick="openGalleryModal()">
                 <i class="fas fa-images me-2"></i>Ver todas las fotos (<span id="photo-count">0</span>)
@@ -585,34 +389,20 @@ Línea 1200: MODALES DE EQUIPO
     </div>
 </section>
 
-<!-- ============================================
-     LIGHTBOX para ver imagen/video en grande
-     ============================================ -->
+<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    
-    <!-- Para IMÁGENES -->
     <img class="lightbox-content" id="lightbox-img" style="display: none;">
-    
-    <!-- Para VIDEOS -->
     <video class="lightbox-content" id="lightbox-video" controls style="display: none;">
         <source src="" type="video/mp4">
-        Tu navegador no soporta video HTML5.
     </video>
-    
     <div class="lightbox-caption" id="lightbox-caption"></div>
-    
-    <!-- Controles anterior/siguiente -->
     <a class="lightbox-prev" onclick="changeImage(-1)">&#10094;</a>
     <a class="lightbox-next" onclick="changeImage(1)">&#10095;</a>
-    
-    <!-- Contador (ej: 3 / 37) -->
     <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
 
-<!-- ============================================
-     MODAL: Galería Completa
-     ============================================ -->
+<!-- MODAL GALERÍA COMPLETA -->
 <div class="modal fade" id="galleryModal" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
@@ -621,314 +411,13 @@ Línea 1200: MODALES DE EQUIPO
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <div class="row" id="full-gallery-grid">
-                    <!-- Aquí se cargan todas las fotos/videos -->
-                </div>
+                <div class="row" id="full-gallery-grid"></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ============================================
-     JAVASCRIPT DE LA GALERÍA
-     ============================================ -->
-<script>
-// ============================================
-// CONFIGURACIÓN DE IMÁGENES Y VIDEOS
-// ============================================
-window.galleryImages = [
-    { src: 'img/0.1.Puero pesquro Artesanal Esmeraldas.JPG', alt: 'Galería 1' },
-    { src: 'img/20220923_154630.jpg', alt: 'Galería 2' },
-    { src: 'img/DSCN3570.JPG', alt: 'Galería 3' },
-    { src: 'img/Muisne.jpeg', alt: 'Galería 4' },
-    { src: 'img/16.Taller Mural Participativo San Jacinto.jpg', alt: 'Galería 5' },
-    { src: 'img/17.Taller Mural Esmeraldas.jpg', alt: 'Galería 6' },
-    { src: 'img/20220909_165403.jpg', alt: 'Galería 7' },
-    { src: 'img/DSCN3038.jpg', alt: 'Galería 8' },
-    { src: 'img/aves rio esme.png', alt: 'Galería 9' },
-    { src: 'img/CAM00166.jpg', alt: 'Galería 10' },
-    { src: 'img/Taller en San Francisco.jpg', alt: 'Galería 11' },
-    { src: 'img/Muisne.jpeg', alt: 'Galería 12' },
-    { src: 'img/participacion en IV congreso  Biologia de Conservacion, miembros de Yemanya .jpeg', alt: 'Galería 13' },
-    { src: 'img/CAM00250.jpg', alt: 'Galería 14' },
-    { src: 'img/Chocó.png', alt: 'Galería 15' },
-    { src: 'img/Demostración de maniobras de liberacion de tortugas tramitida entre geenraciones y genero.jpg', alt: 'Galería 16' },
-    { src: 'img/Pesca.jpeg', alt: 'Galería 17' },
-    { src: 'img/Toma de datos de anidacion en Portete.jpeg', alt: 'Galería 18' },
-    { src: 'img/tortuga anidadora en Portete.jpg', alt: 'Galería 19' },
-    { src: 'img/Sr Daniel Dirigente de Pescadores de Estero del Platano mostrandonos su equipo para pescar.jpg', alt: 'Galería 20' },
-    { src: 'img/Limpieza de playas.jpeg', alt: 'Galería 21' },
-    { src: 'img/IMG-20201115-WA0010.jpg', alt: 'Galería 22' },
-    { src: 'img/IMG-20201115-WA0005.jpg', alt: 'Galería 23' },
-    { src: 'img/IMG-20201008-WA0006.jpg', alt: 'Galería 24' },
-    { src: 'img/IMG_20191025_094446.jpg', alt: 'Galería 25' },
-    { src: 'img/Pescadores de Esmeraldas.jpeg', alt: 'Galería 26' },
-    { src: 'img/vivero de nidos en Galera.jpg', alt: 'Galería 27' },
-    { src: 'img/Merida Ortiz (Carrera de Gestion ambiental) impartiendo taller con comunidad en Portete-Esmeraldas.jpg', alt: 'Galería 28' },
-    { src: 'img/GOPR0122.jpg', alt: 'Galería 29' },
-    { src: 'img/GOPR0321.jpg', alt: 'Galería 30' },
-    { src: 'img/Foto Grupal Guardaparques-Docotrandos UCO.jpg', alt: 'Galería 31' },
-    { src: 'img/DSCN3570.jpg', alt: 'Galería 32' },
-    { src: 'img/DSCN5445.jpg', alt: 'Galería 33' },
-    { src: 'img/DSCN5490.jpg', alt: 'Galería 34' },
-    { src: 'img/Neonatos en Portete.jpeg', alt: 'Galería 35' },
-    { src: 'img/todos abc.jpg', alt: 'Galería 36' },
-    { src: 'img/Eclosion-en-Portete.mp4', alt: 'Eclosión en Portete', type: 'video' }
-];
-
-let currentImageIndex = 0;
-let observer = null;
-
-// ============================================
-// GENERAR PREVIEW (8 primeros items)
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const previewContainer = document.getElementById('gallery-preview');
-    
-    galleryImages.slice(0, 8).forEach((item, index) => {
-        const col = document.createElement('div');
-        col.className = 'col-lg-3 col-md-4 col-6 mb-4';
-        
-        let mediaHTML = '';
-        if (item.type === 'video') {
-            mediaHTML = `
-                <video class="img-fluid" muted preload="none">
-                    <source data-src="${item.src}" type="video/mp4">
-                </video>
-                <div class="video-play-icon">
-                    <i class="fas fa-play-circle"></i>
-                </div>
-            `;
-        } else {
-            mediaHTML = `<img data-src="${item.src}" alt="${item.alt}" class="img-fluid lazy-load" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23f0f0f0' width='300' height='200'/%3E%3C/svg%3E">`;
-        }
-        
-        col.innerHTML = `
-            <div class="gallery-item" onclick="openLightbox(${index})">
-                ${mediaHTML}
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-        `;
-        previewContainer.appendChild(col);
-    });
-    
-    document.getElementById('photo-count').textContent = galleryImages.length;
-    
-    // Inicializar lazy loading para preview
-    initLazyLoading();
-});
-
-// ============================================
-// LAZY LOADING MEJORADO con Intersection Observer
-// ============================================
-function initLazyLoading() {
-    // Desconectar observer anterior si existe
-    if (observer) {
-        observer.disconnect();
-    }
-    
-    // Configuración optimizada para mejor rendimiento
-    const config = {
-        root: null,
-        rootMargin: '50px', // Cargar 50px antes de ser visible
-        threshold: 0.01
-    };
-    
-    observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const element = entry.target;
-                
-                if (element.tagName === 'IMG' && element.classList.contains('lazy-load')) {
-                    loadImage(element);
-                } else if (element.tagName === 'VIDEO') {
-                    loadVideo(element);
-                }
-                
-                observer.unobserve(element);
-            }
-        });
-    }, config);
-    
-    // Observar todas las imágenes y videos
-    document.querySelectorAll('img.lazy-load, video[data-src]').forEach(el => {
-        observer.observe(el);
-    });
-}
-
-function loadImage(img) {
-    const src = img.getAttribute('data-src');
-    if (!src) return;
-    
-    // Crear nueva imagen para precargar
-    const tempImg = new Image();
-    tempImg.onload = function() {
-        img.src = src;
-        img.classList.remove('lazy-load');
-        img.classList.add('loaded');
-    };
-    tempImg.src = src;
-}
-
-function loadVideo(video) {
-    const source = video.querySelector('source[data-src]');
-    if (!source) return;
-    
-    const src = source.getAttribute('data-src');
-    source.src = src;
-    source.removeAttribute('data-src');
-    video.load();
-}
-
-// ============================================
-// ABRIR LIGHTBOX
-// ============================================
-function openLightbox(index) {
-    currentImageIndex = index;
-    const lightbox = document.getElementById('lightbox');
-    const imgElement = document.getElementById('lightbox-img');
-    const videoElement = document.getElementById('lightbox-video');
-    const caption = document.getElementById('lightbox-caption');
-    const counter = document.getElementById('lightbox-counter');
-    
-    const item = galleryImages[index];
-    
-    if (item.type === 'video') {
-        imgElement.style.display = 'none';
-        videoElement.style.display = 'block';
-        videoElement.src = item.src;
-        videoElement.load();
-        videoElement.play();
-    } else {
-        videoElement.style.display = 'none';
-        videoElement.pause();
-        imgElement.style.display = 'block';
-        imgElement.src = item.src;
-    }
-    
-    caption.textContent = item.alt;
-    counter.textContent = `${index + 1} / ${galleryImages.length}`;
-    
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-}
-
-// ============================================
-// CERRAR LIGHTBOX
-// ============================================
-function closeLightbox() {
-    const videoElement = document.getElementById('lightbox-video');
-    videoElement.pause();
-    videoElement.src = '';
-    
-    document.getElementById('lightbox').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// ============================================
-// NAVEGAR entre imágenes/videos
-// ============================================
-function changeImage(direction) {
-    currentImageIndex += direction;
-    
-    if (currentImageIndex >= galleryImages.length) {
-        currentImageIndex = 0;
-    }
-    if (currentImageIndex < 0) {
-        currentImageIndex = galleryImages.length - 1;
-    }
-    
-    openLightbox(currentImageIndex);
-}
-
-// ============================================
-// CONTROLES DE TECLADO
-// ============================================
-document.addEventListener('keydown', function(e) {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox.style.display === 'flex') {
-        if (e.key === 'Escape') {
-            closeLightbox();
-        }
-        if (e.key === 'ArrowRight') {
-            changeImage(1);
-        }
-        if (e.key === 'ArrowLeft') {
-            changeImage(-1);
-        }
-    }
-});
-
-// ============================================
-// MODAL GALERÍA COMPLETA - OPTIMIZADO
-// ============================================
-function openGalleryModal() {
-    const modalElement = document.getElementById('galleryModal');
-    const modal = new bootstrap.Modal(modalElement);
-    const grid = document.getElementById('full-gallery-grid');
-    
-    // Limpiar contenido anterior
-    grid.innerHTML = '';
-    
-    // Crear fragmento de documento para mejor rendimiento
-    const fragment = document.createDocumentFragment();
-    
-    galleryImages.forEach((item, index) => {
-        const col = document.createElement('div');
-        col.className = 'col-lg-3 col-md-4 col-6 mb-3';
-        
-        let mediaHTML = '';
-        if (item.type === 'video') {
-            mediaHTML = `
-                <video class="img-fluid" muted preload="none" data-src="${item.src}">
-                    <source data-src="${item.src}" type="video/mp4">
-                </video>
-                <div class="video-play-icon">
-                    <i class="fas fa-play-circle"></i>
-                </div>
-            `;
-        } else {
-            mediaHTML = `<img data-src="${item.src}" alt="${item.alt}" class="img-fluid lazy-load" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect fill='%23f0f0f0' width='300' height='200'/%3E%3C/svg%3E">`;
-        }
-        
-        col.innerHTML = `
-            <div class="gallery-item" data-index="${index}">
-                ${mediaHTML}
-                <div class="gallery-overlay">
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-        `;
-        fragment.appendChild(col);
-    });
-    
-    grid.appendChild(fragment);
-    
-    // Event delegation para mejor rendimiento
-    grid.addEventListener('click', function(e) {
-        const item = e.target.closest('.gallery-item');
-        if (item) {
-            const index = parseInt(item.getAttribute('data-index'));
-            openLightbox(index);
-            modal.hide();
-        }
-    });
-    
-    modal.show();
-    
-    // Inicializar lazy loading después de que el modal esté visible
-    modalElement.addEventListener('shown.bs.modal', function() {
-        initLazyLoading();
-    }, { once: true });
-}
-</script>
-
-<!-- ============================================
-     SECCIÓN: NOTICIAS
-     Edita aquí las noticias y actualidades
-     ============================================ -->
+<!-- NOTICIAS - Firebase carga aquí -->
 <section id="news" class="section">
     <div class="container">
         <div class="row">
@@ -938,54 +427,42 @@ function openGalleryModal() {
             </div>
         </div>
         <div class="row">
-            
-            <!-- NOTICIA 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/news-turtle-release/400/250.jpg" alt="Liberación de Tortugas">
-                    <div class="card-body d-flex flex-column">
-                        <div class="text-muted small mb-2">15 de junio, 2024</div>
-                        <h4>Liberación Exitosa de 200 Tortugas Marinas</h4>
-                        <p class="flex-grow-1">Este mes celebramos la liberación de 200 crías de tortuga marina en las playas de Esmeraldas...</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#newsModal1">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- NOTICIA 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/news-mangrove-planting/400/250.jpg" alt="Plantación de Manglares">
-                    <div class="card-body d-flex flex-column">
-                        <div class="text-muted small mb-2">8 de junio, 2024</div>
-                        <h4>Comunidades Unidas por los Manglares</h4>
-                        <p class="flex-grow-1">Más de 100 voluntarios participaron en la jornada de reforestación de manglares...</p>
-                       <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#newsModal2">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- NOTICIA 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="project-card fade-in h-100">
-                    <img src="https://picsum.photos/seed/news-environmental-education/400/250.jpg" alt="Educación Ambiental">
-                    <div class="card-body d-flex flex-column">
-                        <div class="text-muted small mb-2">1 de junio, 2024</div>
-                        <h4>Nuevo Programa de Educación Ambiental</h4>
-                        <p class="flex-grow-1">Lanzamos nuestro programa "Guardianes del Agua" en 10 escuelas de la provincia...</p>
-                        <button class="btn btn-sm btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#newsModal3">Leer más</button>
-                    </div>
-                </div>
-            </div>
-            
+            <!-- Firebase carga las noticias aquí -->
         </div>
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: CONTACTO
-     Edita aquí la información de contacto
-     ============================================ -->
+<!-- DONACIONES -->
+<section id="donations" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-3">
+                <h2 class="section-title">Apoya Nuestro Trabajo</h2>
+                <p class="section-subtitle">Tu donación nos ayuda a continuar protegiendo nuestros ecosistemas acuáticos</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                        </div>
+                        
+                        <div id="donations-content">
+                            <!-- Firebase carga aquí el contenido -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
 <section id="contact" class="section section-alt">
     <div class="container">
         <div class="row">
@@ -995,7 +472,6 @@ function openGalleryModal() {
             </div>
         </div>
         <div class="row">
-            <!-- EDITA AQUÍ: Dirección -->
             <div class="col-lg-4 mb-4">
                 <div class="card h-100 border-0 shadow fade-in">
                     <div class="card-body p-4 text-center">
@@ -1007,7 +483,6 @@ function openGalleryModal() {
                     </div>
                 </div>
             </div>
-            <!-- EDITA AQUÍ: Email -->
             <div class="col-lg-4 mb-4">
                 <div class="card h-100 border-0 shadow fade-in">
                     <div class="card-body p-4 text-center">
@@ -1015,19 +490,18 @@ function openGalleryModal() {
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h4>Correo Electrónico</h4>
-                        <p><a href="mailto:info@somosyemanya.org">info@somosyemanya.org</a></p>
+                        <p><a href="/cdn-cgi/l/email-protection#ef86818980af9c8082809c968a828e81968ec1809d88"><span class="__cf_email__" data-cfemail="6d04030b022d1e0200021e1408000c03140c43021f0a">[email&#160;protected]</span></a></p>
                     </div>
                 </div>
             </div>
-            <!-- EDITA AQUÍ: Sitio Web -->
             <div class="col-lg-4 mb-4">
                 <div class="card h-100 border-0 shadow fade-in">
                     <div class="card-body p-4 text-center">
                         <div class="service-icon mb-3">
-                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <h4>Sitio Web</h4>
-                        <p><a href="https://www.somosyemanya.org" target="_blank">www.somosyemanya.org</a></p>
+                        <h4>Teléfono</h4>
+                        <p id="contact-phone">Próximamente</p>
                     </div>
                 </div>
             </div>
@@ -1035,14 +509,10 @@ function openGalleryModal() {
     </div>
 </section>
 
-<!-- ============================================
-     SECCIÓN: FOOTER (PIE DE PÁGINA)
-     Edita aquí los enlaces y redes sociales
-     ============================================ -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <!-- COLUMNA 1: Información General -->
             <div class="col-lg-4 mb-4">
                 <h5>Yemanyá - Agua y Conservación</h5>
                 <p>Organización ecuatoriana sin fines de lucro dedicada a la conservación de ecosistemas marino-costeros y de aguas dulces continentales.</p>
@@ -1055,7 +525,6 @@ function openGalleryModal() {
                 </div>
             </div>
             
-            <!-- COLUMNA 2: Enlaces Rápidos -->
             <div class="col-lg-3 mb-4">
                 <h5>Enlaces Rápidos</h5>
                 <a href="#about">Nosotros</a>
@@ -1066,7 +535,6 @@ function openGalleryModal() {
                 <a href="#news">Noticias</a>
             </div>
             
-            <!-- COLUMNA 3: Áreas de Trabajo -->
             <div class="col-lg-3 mb-4">
                 <h5>Áreas de Trabajo</h5>
                 <a href="#services">Ecosistemas Marino-Costeros</a>
@@ -1076,11 +544,10 @@ function openGalleryModal() {
                 <a href="#projects">Investigación</a>
             </div>
             
-            <!-- COLUMNA 4: Contacto -->
             <div class="col-lg-2 mb-4">
                 <h5>Contacto</h5>
                 <a href="#contact">Información</a>
-                <a href="mailto:info@somosyemanya.org">Email</a>
+                <a href="/cdn-cgi/l/email-protection#650c0b030a25160a080a161c0008040b1c044b0a1702">Email</a>
                 <a href="#contact">Ubicación</a>
             </div>
         </div>
@@ -1090,337 +557,11 @@ function openGalleryModal() {
     </div>
 </footer>
 
-<!-- ============================================
-     MODALES DE PROYECTOS
-     Edita aquí los textos completos de proyectos
-     ============================================ -->
-
-<!-- MODAL PROYECTO 1: Tortugas Marinas -->
-<div class="modal fade" id="projectModal1" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tortugas Marinas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">La investigación en anidaciones de tortugas marinas se enfoca en la anidaciones de tortugas golfinas, (Lepidochelys olivacea) en las playas de Esmeraldas, provincia costera ubicada al norte del Ecuador. Durante los años 2017, 2018, 2019, 2021, 2022 se realizaron actividades de monitoreo durante la temporada de anidación en las playas de Galerita y Portete (ambas playas se encuentran dentro del sistema nacional de áreas protegidas). En dichos monitoreos se registró la temperatura interna de los nidos para calcular el porcentaje de machos y hembras que se forman en dichas playas (proporción sexual), además se levantó información descriptiva de las anidaciones como éxito de eclosión, tiempo de anidación, distancia a la línea alta de marea y posición geográfica de cada nidada.</p>
-                    <p class="text-justify">Los datos de esta investigación demuestran la importancia que tienen estas dos playas para la conservación de tortugas a nivel regional, ya que en 1er lugar el éxito de eclosión es relativamente alto, llegando a registrar nidos con éxitos de eclosión de hasta el 95%, por otro lado la proporción de sexos presentes muestran un sesgo a la formación de machos de hasta un 99%. Esto es de gran importancia ya que diferentes zonas de anidación de tortugas marinas presentan un sesgo a la formación de hembras lo que podría poner en riesgo la sostenibilidad futura de las anidaciones de tortugas marinas al no contar con el número suficiente de machos por lo que el descubrimiento de zonas de anidación en donde se formen machos es de vital importancia. Por último se identificó que la marea tiene un efecto diferente por zona de anidación, fenómeno que se da por las diferencias en la geomorfología de las playas, lo que demuestra la importancia de establecer protocolos de conservación diferenciados por zonas de anidación.</p>
-                    <p class="text-justify">Toda esta información ha sido publicada en revistas de alto impacto, como es Thermal Biology y Climatic Change, misma que es la primera de este tipo en la región, colocando a Ecuador, como un país de gran importancia para la conservación de tortugas marinas en la región.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL PROYECTO 2: Educación Ambiental Pescadores -->
-<div class="modal fade" id="projectModal2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Educación Ambiental Pescadores</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">La Educación ambiental para pescadores, tiene como objetivo la generación de comportamientos ambientales más sostenibles en la pesca y reducir la captura incidental de megafauna marina, con énfasis en las tortugas marinas. Esta investigación se ha llevado a cabo en caletas pesqueras del sur de Esmeraldas y el norte de Manabí. Para generar cambios en el comportamiento de los pescadores es necesario entender cuáles son los elementos conductuales que provocan su comportamiento y su relación con la diversidad marina.</p>
-                    <p class="text-justify">Los resultados de esta investigación muestran que los pescadores no quieren capturar tortugas marinas, y que aprecian la presencia de estas especies en el mar sin embargo no entienden cuál es la importancia de estos organismos para la sostenibilidad de la pesca. Durante el desarrollo de esta investigación se generó el 1er instrumento de medición comportamental específico para los pescadores, mismo que fue validado con más de 400 pescadores entre las provincias de Esmeraldas y Manabí.</p>
-                    <p class="text-justify">Esta investigación además busca nuevas formas de educación ambiental enfocada en pecadores y pecadoras para lo cual se ha desarrollado un protocolo experimental de educación en donde el arte está siendo evaluado como herramienta pedagógica activa en adultos. Se han desarrollado los primeros talleres usando esta nueva metodología en las caletas pesqueras de San Francisco del Cabo, Estero de Plátano(Esmeraldas) y San Clemente (Manabi). Esta investigación ha sido publicada en revistas de alto impacto, siendo las primeras de este tipo en la región.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL PROYECTO 3: Monitoreo Calidad Agua -->
-<div class="modal fade" id="projectModal3" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Monitoreo de Calidad del Agua</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Como parte de los procesos de investigación, investigadores de Yemanyá desarrollan acciones sistemáticas de monitoreo de la calidad del agua en ríos y estuarios de la provincia de Esmeraldas, con el objetivo de generar información técnica confiable que contribuya a la conservación de los ecosistemas acuáticos, y la gestión sostenible del recurso hídrico. Estas acciones se implementan en ríos estratégicos de la provincia, priorizando zonas con alta presión antrópica, importancia ecológica y dependencia comunitaria del agua.</p>
-                    <p class="text-justify">El monitoreo incluye la evaluación de parámetros físicos, químicos y biológicos, tales como temperatura, pH, oxígeno disuelto, conductividad, turbidez, sólidos disueltos, nutrientes y, cuando el contexto lo requiere, indicadores de contaminación orgánica. La información levantada permite identificar tendencias de deterioro o recuperación de los cuerpos de agua, así como alertar sobre posibles fuentes de contaminación asociadas a actividades urbanas, agrícolas, industriales o extractivas.</p>
-                    <p class="text-justify">Un componente clave del trabajo de Yemanyá es el monitoreo participativo, que involucra a comunidades locales, estudiantes universitarios y actores territoriales en procesos de capacitación y toma de datos en campo. Esta metodología fortalece las capacidades locales, promueve la apropiación social del conocimiento y fomenta una cultura de corresponsabilidad en el cuidado del agua, alineada con los principios de educación ambiental y vinculación con la sociedad.</p>
-                    <p class="text-justify">Los resultados del monitoreo son sistematizados y utilizados como insumo para investigaciones académicas, proyectos de restauración ecológica, informes técnicos y procesos de incidencia local, contribuyendo a la toma de decisiones informadas por parte de instituciones públicas, comunidades y organizaciones sociales. De esta manera, Yemanyá articula la ciencia, la educación y la acción comunitaria para promover una gestión integral del agua en la provincia de Esmeraldas.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL PROYECTO 4: Conservación Manglares -->
-<div class="modal fade" id="projectModal4" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Conservación Comunitaria del Ecosistema Manglar</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Los manglares de la provincia de Esmeraldas constituyen uno de los complejos ecológicos más extensos y mejor conservados del litoral ecuatoriano. La importancia de estos manglares trasciende su valor ecológico y se traduce en beneficios directos para las comunidades costeras. Finalmente, estos ecosistemas cumplen un papel crucial en la adaptación y mitigación del cambio climático. Los manglares de Esmeraldas son sumideros de carbono azul altamente eficientes, almacenando entre tres y cinco veces más carbono por hectárea que los bosques terrestres. Además, actúan como barreras naturales que reducen el impacto de marejadas, erosión costera e inundaciones, fenómenos que afectan con mayor intensidad a comunidades de alto riesgo como Muisne, San Lorenzo, Borbón y Las Peñas. Su protección, por tanto, no solo preserva biodiversidad, sino que reduce la vulnerabilidad climática de toda la región costera norte del Ecuador.</p>
-                    <p class="text-justify">En términos de conservación, los manglares de Esmeraldas representan un ejemplo destacado de manejo comunitario en Ecuador. A través de los Acuerdos de Uso Sustentable y Custodia del Manglar (AUSCEM), organizaciones locales administran de manera responsable una porción significativa de estos bosques, aportando al manejo sostenible de alrededor de 100.000 hectáreas de manglar a nivel nacional, dentro de las cuales Esmeraldas ocupa un rol central. Este modelo de gobernanza comunitaria ha permitido frenar procesos históricos de degradación relacionados con la expansión camaronera, la tala ilegal y el cambio de uso del suelo, consolidándose como una estrategia efectiva de conservación participativa.</p>
-                    <p class="text-justify">A través de esta investigación se pudo determinar que los AUSCEM representan una herramienta de gobernanza ambiental participativa que es la corresponsabilidad en la conservación del manglar entre actores comunitarios, estatales y no gubernamentales, siendo un mecanismo válido para la cogestión del manglar, pero su efectividad depende de la integración de políticas públicas coherentes, de la provisión de incentivos socioeconómicos sostenibles y del fortalecimiento institucional a escala local y nacional.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL PROYECTO 5: Ríos del Chocó -->
-<div class="modal fade" id="projectModal5" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Conservación de los Ríos del Chocó Ecuatoriano</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">El Chóco es una de las regiones biogeográficas de mayor biodiversidad del mundo. Debido a su gradiente altitudinal y a las diferencias en la cantidad y estacionalidad de las precipitaciones alberga una gran variedad de ecosistemas, desde manglares costeros hasta páramos andinos. También es la región del mundo con la mayor densidad de cauces fluviales por unidad de superficie. Esta diversidad de condiciones ambientales genera una gran variabilidad en los ecosistemas fluviales y una fauna acuática muy diversa. Se estima que existen 423 especies de peces de agua dulce en esta región, de las cuales 326 son endémicas. Sólo en la vertiente occidental de Ecuador, existen 112 especies de peces de agua dulce, de las cuáles 43 son endémicas.</p>
-                    <p class="text-justify">Los objetivos de este proyecto son realizar investigaciones sobre el funcionamiento ecológico y la biodiversidad de los ecosistemas fluviales en la provincia de Esmeraldas; fomentar el conocimiento, la conservación y el uso sostenible de estos ecosistemas; y favorecer la participación las comunidades locales de Esmeraldas y la preservación de sus saberes ancestrales.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL PROYECTO 6: Aves Acuáticas -->
-<div class="modal fade" id="projectModal6" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Monitoreo de Aves Acuáticas en el Estuario del Río Esmeraldas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">El río Esmeraldas situado en el norte de Ecuador, nace en los Andes y desemboca en el Pacífico. Su cuenca hidrográfica con 21,500 km2 es la segunda mayor en superficie de la vertiente occidental. La ciudad de Quito con más de 2 millones de habitantes ocupa la parte alta de la cuenca. En su desembocadura, se encuentra la ciudad de Esmeraldas y el río es la fuente de agua potable para cerca de 500,000 personas. El estuario del río Esmeraldas mantiene el Refugio de Vida Silvestre Manglares del Estuario del río Esmeraldas, un área protegida de 242 ha, que contiene los últimos manglares que existen en la zona de influencia del río.</p>
-                    <p class="text-justify">Entre las especies que hemos podido observar destacan el ibis blanco, la garceta bueyera, la garceta grande, el pelícano pardo, la fragata magnífica y el águila pescadora. Los objetivos de este proyecto son monitorear las aves presentes en el estuario del río Esmeraldas como indicadores de cambios ambientales y fomentar el conocimiento del Refugio de Vida Silvestre y sus valores para la conservación de la avifauna local.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ============================================
-     MODALES DE EQUIPO
-     Edita aquí la información completa de cada miembro
-     ============================================ -->
-
-<!-- MODAL EQUIPO 1: Estefanía Sánchez-Flores -->
-<div class="modal fade" id="teamModal1" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Estefanía Sánchez-Flores</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Con más de 10 años de experiencia en la investigación de Educación Ambiental, conservación de la biodiversidad, desarrollo sostenible y participación comunitaria, ha liderado proyectos que integran el arte, la ciencia y la ciudadanía con metodologías participativas para conectar comunidades con la naturaleza. Sus líneas de investigación se centran en biología de la Conservación, Educación ambiental, desarrollo sostenible y cambio climático.</p>
-                    <p class="text-justify">Estefania además es directora de Educación de la Sociedad de Biología de la Conservación, región latinoamérica, promoviendo la formación y divulgación científica en América latina y el Caribe.</p>
-                    <p><strong>Email:</strong> <a href="mailto:estefaniasanchez@somosyemanya.org">estefaniasanchez@somosyemanya.org</a></p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL EQUIPO 2: Mérida Ortíz -->
-<div class="modal fade" id="teamModal2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Mérida Ortíz</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Especialista en Cambios Climáticos, Comunidades y Conservación.</p>
-                    <p><strong>Email:</strong> <a href="mailto:meridaortiz@somosyemanya.org">meridaortiz@somosyemanya.org</a></p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL EQUIPO 3: Rubén Vinueza-Chérrez -->
-<div class="modal fade" id="teamModal3" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Rubén Vinueza-Chérrez</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Especialista en Oceanografía Biológica y Cambio Climático.</p>
-                    <p><strong>Email:</strong> <a href="mailto:rubenvinueza@somosyemanya.org">rubenvinueza@somosyemanya.org</a></p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL EQUIPO 4: Jon Molinero -->
-<div class="modal fade" id="teamModal4" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Jon Molinero</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Especialista en Ecología Acuática y Calidad de Agua.</p>
-                    <p><strong>Email:</strong> <a href="mailto:jonmolinero@somosyemanya.org">jonmolinero@somosyemanya.org</a></p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL EQUIPO 5: Eduardo Rebolledo -->
-<div class="modal fade" id="teamModal5" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Eduardo Rebolledo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="project-detail-content">
-                    <p class="text-justify">Especialista en Oceanografía Biológica, Pesquería y Acuicultura.</p>
-                    <p><strong>Email:</strong> <a href="mailto:eduardorebolledo@somosyemanya.org">eduardorebolledo@somosyemanya.org</a></p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Agrega esto después del cierre de </section> de la sección de noticias (aproximadamente línea 1090) -->
-
-<!-- ============================================
-     MODALES DE NOTICIAS
-     ============================================ -->
-
-<!-- MODAL NOTICIA 1: Liberación de Tortugas -->
-<div class="modal fade" id="newsModal1" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Liberación Exitosa de 200 Tortugas Marinas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="text-muted small mb-3">15 de junio, 2024</div>
-                <img src="https://picsum.photos/seed/news-turtle-release/800/400.jpg" alt="Liberación de Tortugas" class="img-fluid rounded mb-4">
-                <div class="project-detail-content">
-                    <p class="text-justify">Este mes celebramos la liberación de 200 crías de tortuga marina en las playas de Esmeraldas, un logro importante en nuestros esfuerzos de conservación de estas especies en peligro de extinción.</p>
-                    <p class="text-justify">El evento contó con la participación de voluntarios locales, estudiantes y miembros de la comunidad, quienes pudieron ser testigos del momento en que las pequeñas tortugas emprendieron su viaje hacia el océano.</p>
-                    <p class="text-justify">Este programa de conservación ha sido posible gracias al trabajo conjunto con las comunidades locales y el apoyo de instituciones nacionales e internacionales comprometidas con la protección de la biodiversidad marina.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL NOTICIA 2: Reforestación de Manglares -->
-<div class="modal fade" id="newsModal2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Comunidades Unidas por los Manglares</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="text-muted small mb-3">8 de junio, 2024</div>
-                <img src="https://picsum.photos/seed/news-mangrove-planting/800/400.jpg" alt="Plantación de Manglares" class="img-fluid rounded mb-4">
-                <div class="project-detail-content">
-                    <p class="text-justify">Más de 100 voluntarios participaron en la jornada de reforestación de manglares organizada por Yemanyá en colaboración con comunidades locales de la provincia de Esmeraldas.</p>
-                    <p class="text-justify">Durante la jornada se plantaron más de 500 plántulas de mangle en zonas degradadas del estuario, contribuyendo a la restauración de este ecosistema vital para la protección costera y la biodiversidad marina.</p>
-                    <p class="text-justify">Los manglares son ecosistemas fundamentales que actúan como barreras naturales contra la erosión costera, son hábitat de numerosas especies y juegan un papel crucial en la captura de carbono.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MODAL NOTICIA 3: Programa Educativo -->
-<div class="modal fade" id="newsModal3" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Nuevo Programa de Educación Ambiental</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="text-muted small mb-3">1 de junio, 2024</div>
-                <img src="https://picsum.photos/seed/news-environmental-education/800/400.jpg" alt="Educación Ambiental" class="img-fluid rounded mb-4">
-                <div class="project-detail-content">
-                    <p class="text-justify">Lanzamos nuestro programa "Guardianes del Agua" en 10 escuelas de la provincia de Esmeraldas, con el objetivo de educar a las nuevas generaciones sobre la importancia de la conservación de los recursos hídricos.</p>
-                    <p class="text-justify">El programa incluye talleres interactivos, actividades de campo y material educativo especialmente diseñado para estudiantes de educación básica y bachillerato.</p>
-                    <p class="text-justify">A través de este programa, esperamos alcanzar a más de 500 estudiantes durante el primer año, fomentando una cultura de cuidado y respeto por los ecosistemas acuáticos en las comunidades costeras de Ecuador.</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Scripts Personalizados -->
 <script src="js/main.js"></script>
-
+<script src="js/gallery.js"></script>
 
 <!-- Cargar configuración de Firebase -->
 <script type="module" src="js/firebase-config.js"></script>

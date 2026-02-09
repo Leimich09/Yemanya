@@ -1,10 +1,11 @@
 // ============================================
-// FIREBASE CONTENT LOADER - VERSIÓN FINAL
+// FIREBASE CONTENT LOADER - COMPLETO
 // Archivo: js/firebase-loader.js
 // ============================================
 
 import { db, doc, getDoc } from './firebase-config.js';
 
+// Cargar todo el contenido cuando la página esté lista
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('[Firebase] Cargando contenido...');
     
@@ -15,17 +16,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             loadProjects(),
             loadTeam(),
             loadGallery(),
-            loadNews()
+            loadNews(),
+            loadDonations(),
+            loadContact()
         ]);
         
-        console.log('[Firebase] ✅ Contenido cargado');
+        console.log('[Firebase] Contenido cargado');
     } catch (error) {
         console.error('[Firebase] Error:', error);
     }
 });
 
 // ============================================
-// STATS
+// ESTADÍSTICAS
 // ============================================
 async function loadStats() {
     try {
@@ -60,7 +63,7 @@ function animateCounter(index, target) {
 }
 
 // ============================================
-// ABOUT
+// ACERCA DE
 // ============================================
 async function loadAbout() {
     try {
@@ -86,7 +89,7 @@ async function loadAbout() {
 }
 
 // ============================================
-// PROJECTS
+// PROYECTOS
 // ============================================
 async function loadProjects() {
     try {
@@ -153,7 +156,7 @@ function createProjectModal(project, index) {
 }
 
 // ============================================
-// TEAM
+// EQUIPO
 // ============================================
 async function loadTeam() {
     try {
@@ -216,12 +219,7 @@ function createTeamModal(member, index) {
 }
 
 // ============================================
-// GALERÍA - PROBLEMA PRINCIPAL RESUELTO
-// El index.html tiene "const galleryImages" que
-// NO puede ser sobreescrita. La solución es:
-// 1. Cambiar const a let en el index.html
-// 2. Aquí sobreescribir window.galleryImages
-// 3. Re-generar el preview desde Firebase
+// GALERÍA
 // ============================================
 async function loadGallery() {
     try {
@@ -229,10 +227,8 @@ async function loadGallery() {
         if (galleryDoc.exists()) {
             const gallery = galleryDoc.data().items || [];
             
-            // Sobreescribir la variable global
             window.galleryImages = gallery;
             
-            // Re-generar el preview con los datos de Firebase
             const previewContainer = document.getElementById('gallery-preview');
             if (previewContainer) {
                 previewContainer.innerHTML = '';
@@ -266,7 +262,6 @@ async function loadGallery() {
                     previewContainer.appendChild(col);
                 });
                 
-                // Actualizar contador
                 const photoCount = document.getElementById('photo-count');
                 if (photoCount) photoCount.textContent = gallery.length;
             }
@@ -277,7 +272,7 @@ async function loadGallery() {
 }
 
 // ============================================
-// NEWS - CON MODAL
+// NOTICIAS
 // ============================================
 async function loadNews() {
     try {
@@ -343,7 +338,101 @@ function createNewsModal(newsItem, index) {
 }
 
 // ============================================
-// UTILS
+// DONACIONES
+// ============================================
+async function loadDonations() {
+    try {
+        const donationsDoc = await getDoc(doc(db, 'content', 'donations'));
+        if (donationsDoc.exists()) {
+            const donations = donationsDoc.data();
+            const container = document.getElementById('donations-content');
+            if (!container) return;
+            
+            let html = `
+                <h3 class="mb-4">${escapeHtml(donations.title || 'Cómo Donar')}</h3>
+                <p class="lead mb-4">${escapeHtml(donations.description || '')}</p>
+            `;
+            
+            if (donations.accounts && donations.accounts.length > 0) {
+                html += '<div class="donations-accounts">';
+                
+                donations.accounts.forEach((account, index) => {
+                    html += `
+                        <div class="donation-account-card ${index > 0 ? 'mt-4' : ''}">
+                            <h5 class="text-primary mb-3">
+                                <i class="fas fa-university me-2"></i>${escapeHtml(account.bank || 'Banco')}
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <strong>Tipo:</strong> ${escapeHtml(account.type || 'Ahorros')}
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <strong>Cuenta:</strong> ${escapeHtml(account.number || '')}
+                                </div>
+                                ${account.holder ? `
+                                <div class="col-md-6 mb-2">
+                                    <strong>Titular:</strong> ${escapeHtml(account.holder)}
+                                </div>
+                                ` : ''}
+                                ${account.id ? `
+                                <div class="col-md-6 mb-2">
+                                    <strong>RUC/Cédula:</strong> ${escapeHtml(account.id)}
+                                </div>
+                                ` : ''}
+                                ${account.email ? `
+                                <div class="col-12 mb-2">
+                                    <strong>Email:</strong> <a href="mailto:${account.email}">${escapeHtml(account.email)}</a>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+            } else {
+                html += '<p class="text-muted">Información de cuentas próximamente disponible.</p>';
+            }
+            
+            container.innerHTML = html;
+        }
+    } catch (error) {
+        console.error('Error loading donations:', error);
+    }
+}
+
+// ============================================
+// CONTACTO
+// ============================================
+async function loadContact() {
+    try {
+        const contactDoc = await getDoc(doc(db, 'content', 'contact'));
+        if (contactDoc.exists()) {
+            const contact = contactDoc.data();
+            
+            const addressEl = document.querySelector('#contact .col-lg-4:nth-child(1) p');
+            if (addressEl && contact.address) {
+                addressEl.textContent = contact.address;
+            }
+            
+            const emailEl = document.querySelector('#contact .col-lg-4:nth-child(2) p a');
+            if (emailEl && contact.email) {
+                emailEl.href = `mailto:${contact.email}`;
+                emailEl.textContent = contact.email;
+            }
+            
+            const phoneEl = document.getElementById('contact-phone');
+            if (phoneEl && contact.phone) {
+                phoneEl.innerHTML = `<a href="tel:${contact.phone}">${escapeHtml(contact.phone)}</a>`;
+            }
+        }
+    } catch (error) {
+        console.error('Error loading contact:', error);
+    }
+}
+
+// ============================================
+// UTILIDADES
 // ============================================
 function checkFadeIn() {
     if (typeof window.checkFadeIn === 'function') {
