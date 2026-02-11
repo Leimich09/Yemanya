@@ -1,5 +1,5 @@
 // ============================================
-// GALERÍA - Lightbox + Modal + Z-Index correcto
+// GALERÍA - VERSIÓN FINAL CORREGIDA
 // Archivo: js/gallery.js
 // ============================================
 
@@ -36,12 +36,19 @@ function openLightbox(index) {
     caption.textContent = item.alt || '';
     counter.textContent = `${index + 1} / ${window.galleryImages.length}`;
     
+    // IMPORTANTE: Lightbox por encima del modal
     lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    lightbox.style.zIndex = '10000'; // Por encima del modal (1055)
+    
+    // NO bloqueamos scroll si hay modal abierto
+    const modalOpen = document.querySelector('.modal.show');
+    if (!modalOpen) {
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 // ============================================
-// LIGHTBOX - CERRAR
+// LIGHTBOX - CERRAR (sin cerrar el modal)
 // ============================================
 function closeLightbox() {
     const videoElement = document.getElementById('lightbox-video');
@@ -49,8 +56,15 @@ function closeLightbox() {
         videoElement.pause();
         videoElement.src = '';
     }
-    document.getElementById('lightbox').style.display = 'none';
-    document.body.style.overflow = 'auto';
+    
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    
+    // Solo restauramos scroll si NO hay modal abierto
+    const modalOpen = document.querySelector('.modal.show');
+    if (!modalOpen) {
+        document.body.style.overflow = 'auto';
+    }
 }
 
 // ============================================
@@ -76,7 +90,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ============================================
-// MODAL GALERÍA COMPLETA - con lazy loading
+// MODAL GALERÍA COMPLETA - SIN CERRAR
 // ============================================
 function openGalleryModal() {
     const modalElement = document.getElementById('galleryModal');
@@ -93,21 +107,23 @@ function openGalleryModal() {
         
         let mediaHTML = '';
         if (item.type === 'video') {
+            // Video con ícono de play CENTRADO
             mediaHTML = `
-                <video class="img-fluid" muted preload="none">
-                    <source src="${item.src}" type="video/mp4">
-                </video>
-                <div class="video-play-icon">
-                    <i class="fas fa-play-circle"></i>
+                <div style="position: relative; width: 100%; height: 200px; background: #e0e0e0;">
+                    <video class="img-fluid" muted preload="metadata" style="width:100%; height:200px; object-fit:cover;">
+                        <source src="${item.src}#t=0.5" type="video/mp4">
+                    </video>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                        <i class="fas fa-play-circle" style="font-size: 48px; color: rgba(255,255,255,0.9); text-shadow: 0 2px 8px rgba(0,0,0,0.5);"></i>
+                    </div>
                 </div>
             `;
         } else {
-            // Placeholder mientras carga
-            mediaHTML = `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 180'%3E%3Crect fill='%23e9ecef' width='300' height='180'/%3E%3C/svg%3E" alt="${item.alt || ''}" class="img-fluid gallery-lazy" data-src="${item.src}">`;
+            mediaHTML = `<img src="${item.src}" alt="${item.alt || ''}" class="img-fluid" style="width:100%; height:200px; object-fit:cover;">`;
         }
         
         col.innerHTML = `
-            <div class="gallery-item" data-index="${index}" onclick="openLightboxFromModal(${index})">
+            <div class="gallery-item" onclick="openLightboxFromModal(${index})">
                 ${mediaHTML}
                 <div class="gallery-overlay">
                     <i class="fas fa-search-plus"></i>
@@ -119,46 +135,25 @@ function openGalleryModal() {
     
     grid.appendChild(fragment);
     modal.show();
-    
-    // Lazy loading cuando el modal ya está visible
-    modalElement.addEventListener('shown.bs.modal', function handler() {
-        initModalLazyLoad();
-        modalElement.removeEventListener('shown.bs.modal', handler);
-    });
 }
 
-// Abrir lightbox desde modal
+// Abrir lightbox DESDE modal (SIN cerrar el modal)
 function openLightboxFromModal(index) {
-    const modal = bootstrap.Modal.getInstance(document.getElementById('galleryModal'));
-    if (modal) modal.hide();
-    // Pequeño delay para que el modal se cierre antes de abrir lightbox
-    setTimeout(() => openLightbox(index), 200);
+    // NO cerramos el modal, solo abrimos el lightbox encima
+    openLightbox(index);
 }
 
 // ============================================
-// LAZY LOADING para el modal de galería
+// Cerrar lightbox al hacer clic en el fondo negro
 // ============================================
-function initModalLazyLoad() {
-    const images = document.querySelectorAll('.gallery-lazy');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                const src = img.getAttribute('data-src');
-                if (src) {
-                    img.src = src;
-                    img.removeAttribute('data-src');
-                    img.classList.remove('gallery-lazy');
-                }
-                observer.unobserve(img);
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            // Solo cerrar si hacen clic en el fondo negro (no en la imagen)
+            if (e.target === lightbox) {
+                closeLightbox();
             }
         });
-    }, {
-        root: document.querySelector('#galleryModal .modal-body'),
-        rootMargin: '100px',
-        threshold: 0.01
-    });
-    
-    images.forEach(img => observer.observe(img));
-}
+    }
+});

@@ -1,5 +1,6 @@
 // ============================================
-// FIREBASE ADMIN
+// FIREBASE ADMIN - COMPLETO CON DONACIONES Y CONTACTO
+// Archivo: js/firebase-admin.js
 // ============================================
 
 import { auth, db, signInWithEmailAndPassword, signOut, onAuthStateChanged, doc, getDoc, setDoc } from './firebase-config.js';
@@ -190,7 +191,6 @@ function renderProjects() {
                 <div class="col-12 mb-3">
                     <label class="form-label">Imagen/Video (ruta en carpeta img/)</label>
                     <input type="text" class="form-control" value="${escapeHtml(proj.media || '')}" onchange="window.updateProject(${i}, 'media', this.value)" placeholder="img/proyecto.jpg">
-                    <small class="text-muted">No uses espacios en los nombres. Ej: img/mi-video.mp4</small>
                 </div>
                 <div class="col-12 mb-3">
                     <label class="form-label">Tipo de medio</label>
@@ -388,7 +388,6 @@ function renderGallery() {
                 <div class="col-md-8 mb-3">
                     <label class="form-label">Archivo (ruta)</label>
                     <input type="text" class="form-control" value="${escapeHtml(item.src || '')}" onchange="window.updateGallery(${i}, 'src', this.value)" placeholder="img/galeria/foto.jpg">
-                    <small class="text-muted">Ej: img/galeria/imagen.jpg o img/galeria/video.mp4</small>
                 </div>
                 <div class="col-12 mb-3">
                     <label class="form-label">Tipo</label>

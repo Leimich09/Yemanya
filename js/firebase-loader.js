@@ -240,11 +240,13 @@ async function loadGallery() {
                     let mediaHTML = '';
                     if (item.type === 'video') {
                         mediaHTML = `
-                            <video class="img-fluid" muted preload="none" style="width:100%; height:200px; object-fit:cover;">
-                                <source src="${item.src}" type="video/mp4">
-                            </video>
-                            <div class="video-play-icon">
-                                <i class="fas fa-play-circle"></i>
+                            <div style="position: relative; width: 100%; height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                                <video class="img-fluid" muted preload="metadata" style="width:100%; height:200px; object-fit:cover; position: absolute; top: 0; left: 0;">
+                                    <source src="${item.src}#t=0.5" type="video/mp4">
+                                </video>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">
+                                    <i class="fas fa-play-circle" style="font-size: 48px; color: rgba(255,255,255,0.9); text-shadow: 0 2px 8px rgba(0,0,0,0.5);"></i>
+                                </div>
                             </div>
                         `;
                     } else {

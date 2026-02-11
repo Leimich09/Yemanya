@@ -162,4 +162,4 @@ document.querySelectorAll('.project-card video').forEach(video => {
 // CONSOLE: Mensaje de bienvenida (opcional)
 // ========================================================================
 console.log('%c🌊 Yemanyá - Agua y Conservación', 'color: #2a8c5a; font-size: 20px; font-weight: bold;');
-console.log('%cSitio web desarrollado con ❤️ para la conservación de ecosistemas acuáticos', 'color: #3498db; font-size: 12px;');
+console.log('%cSitio web desarrollado para la conservación de ecosistemas acuáticos', 'color: #3498db; font-size: 12px;');
